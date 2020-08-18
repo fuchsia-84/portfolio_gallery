@@ -6,23 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/colorbox.css">
 
-    <title>Title</title>
+    <title>Fuchsia Portfolio</title>
 </head>
 <body>
-  <!-- header -->
-  <header id="header">
-  </header>
-  <!-- //header -->
-  <!-- footer -->
-  <footer id="footer">
-  </footer>
-  <!-- //footer -->
-  <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
-  <!-- Script -->
-  <script src="js/main.js" ></script>
-  
+    <!-- header -->
+    <header class="header" role="banner">
+        <div class="inner clearfix">
+            <h1 class="logo"><a href="./">Fuchsia Portfolio</a></h1>
+            <form class="filter_form" id="gallery_filter">
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter_all" value="all" checked>
+                    <label for="filter_all">All</label>
+                </span>
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter_people" value="people">
+                    <label for="filter_people">People</label>
+                </span>
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter_animals" value="animals">
+                    <label for="filter_animals">Animals</label>
+                </span>
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter-nature" value="nature">
+                    <label for="filter_nature">Nature</label>
+                </span>
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter_plantes" value="plantes">
+                    <label for="filter_plantes">Plantes</label>
+                </span>
+                <span class="form_item">
+                    <input type="radio" name="filter" id="filter_architects" value="architects">
+                    <label for="filter_architects">Architects</label>
+                </span>
+            </form>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- main -->
+    <div class="main" role="main">
+        <ul class="gallery" id="gallery"></ul>
+        <button class="load_more" id="load_more">MORE</button>
+    </div>
+    <!-- //main-->
+
+    <!-- Script -->
+    <script src="./js/vendor/modernizr.custom.min.js"></script>
+    <script src="./js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="./js/vendor/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="./js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/vendor/masonry.pkgd.min.js"></script>
+    <script src="./js/vendor/jquery.colorbox-min.js"></script>
+    <script src="js/main.js" ></script>
 </body>
 </html>

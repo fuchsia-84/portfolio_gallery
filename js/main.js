@@ -105,7 +105,12 @@ $(function () {
             // アイテムを追加
             add_items(true);
         }
+    });
 
-
+    // jQuery UI Button
+    $('.filter_form input[type="radio"]').button({
+        icons: {
+            primary: 'icon-radio'
+        }
     });
 });

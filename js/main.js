@@ -3,7 +3,7 @@ $(function () {
     $('#gallery').each(function() {
         
         var $container = $(this),
-            $loadmore_btn = $('#load_more'), // 追加ボタン
+            $more_btn = $('#more_btn'), // 追加ボタン
             $filter = $('#gallery_filter'), // フィルタリングフォーム
             add_count = 16, // 1度に表示するアイテム数
             added_count = 0, // 表示済みアイテム数
@@ -28,7 +28,7 @@ $(function () {
             add_items(); // 表示
 
             // 追加ボタンがクリックされたら追加表示
-            $loadmore_btn.on('click', add_items());
+            $more_btn.on('click', add_items);
 
             // ラジオボタンが変更されたらフィルタリングを実行
             $filter.on('change', 'input[type="radio"]', filter_items);
@@ -57,7 +57,7 @@ $(function () {
             $container.append(elements); // DOM挿入
 
             // 画像ダウンロード完了で実行
-            $container.imagesLoaded(function() {
+            $container.imagesLoaded(function () {
                 $(elements).removeClass('is_loading'); // 表示可能にする
                 $container.masonry('appended', elements); // Masonryレイアウト
 
@@ -71,9 +71,9 @@ $(function () {
 
             // データ数に応じて追加ボタンの表示/非表示を切替
             if (added_count < filtered_data.length) {
-                $loadmore_btn.show();
+                $more_btn.show();
             } else {
-                $loadmore_btn.hide();
+                $more_btn.hide();
             }
         }
 

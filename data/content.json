@@ -6,7 +6,19 @@
       "thumb": "img/thumb-1-3.jpg",
       "large": "img/large-1-3.jpg"
     },
-    "date": "2020-03-04"
+    "content": {
+      "odai": "地元にできる新しい水族館の仮想LP",
+      "concept": "「札幌市」、「水族館」",
+      "description" : "メイン写真が映えるよう背景透明に白文字とし、水や海が連想されるように波形のセクション境界に。明るい印象のライトトーンでまとめ、下部は濃い色で安定させました。",
+      "link": {
+        "xd": "https://xd.adobe.com/view/a952b491-a376-41e8-673d-d5cc7ec60db8-df63/",
+        "webpage": "",
+        "github" : "",
+        "design_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203000",
+        "coding_article" : ""
+      }
+    },
+    "date": "2020-03"
   },
   {
     "title": "Dearly Be Loved",

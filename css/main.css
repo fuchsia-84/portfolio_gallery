@@ -60,6 +60,9 @@ img { vertical-align: middle; }
     opacity: 0;
 }
 .gallery_item a {
+    display: none;
+}
+.gallery_item .gallery_img {
     display: block;
 }
 .gallery_item .caption {

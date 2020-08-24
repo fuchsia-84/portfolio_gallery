@@ -47,22 +47,31 @@ $(function () {
                 if(item.category == "original") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a href="' + item.images.large + '">' +
+                        '<a class="gallery_img" href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
                             '<span class="caption">' +
                                 '<span class="inner"' +
                                     '<b class="title">' + item.title + '</b>' +
                                     '<time class="date" datatime="' + item.date + '">' +
                                         item.date.replace(/-0?/g, '/') +
-                                    '</time>' +
+                                    '</time>' + '</br>' +
+                                    '<span class="content"' +
+                                        '<p>オリジナルWebデザイン</p>' +
+                                        'お題 : ' + item.content.odai +
+                                        'コンセプト : ' + item.content.concept +
+                                        '工夫点 : ' + item.content.description +
+                                        '<a href="' + item.content.link.xd + '">デザインカンプ(PC版/XD)</a>' +
+                                        '</p>'
+                                    '</span>' +
                                 '</span>' +
                             '</span>' +
                         '</a>' + 
                     '</li>';
+
                 } else if (item.category == "copy") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a href="' + item.images.large + '">' +
+                        '<a class="gallery_img" href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
                             '<span class="caption">' +
                             '</span>' +
@@ -71,7 +80,7 @@ $(function () {
                 } else if (item.category == "workbook") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a href="' + item.images.large + '">' +
+                        '<a class="gallery_img" href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
                             '<span class="caption">' +
                             '</span>' +
@@ -80,7 +89,7 @@ $(function () {
                 } else {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a href="' + item.images.large + '">' +
+                        '<a class="gallery_img" href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
                             '<span class="caption">' +
                             '</span>' +
@@ -103,14 +112,16 @@ $(function () {
                 }
             });
 
+            /*
             // リンク先にColorboxを設定
-            $container.find('a').colorbox( {
-                maxWidth: '80%',
-                maxHeight: '95%',
+            $container.find('.gallery_img').colorbox( {
+                maxWidth: '60%',
+                maxHeight: '80%',
                 title: function() {
                     return $(this).find('.inner').html();
                 }
             })
+            */
 
             added_count += slice_data.length; // 追加済みアイテム数を更新
 

@@ -43,7 +43,9 @@ $(function () {
                 slice_data = filtered_data.slice(added_count, added_count + add_count);
 
             $.each(slice_data, function(i, item) {
-                var itemHTML =
+                var itemHTML ='';
+                if(item.category == "original") {
+                    itemHTML =
                     '<li class="gallery_item is_loading">' +
                         '<a href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
@@ -57,7 +59,34 @@ $(function () {
                             '</span>' +
                         '</a>' + 
                     '</li>';
-            
+                } else if (item.category == "copy") {
+                    itemHTML =
+                    '<li class="gallery_item is_loading">' +
+                        '<a href="' + item.images.large + '">' +
+                            '<img src="' + item.images.thumb + '" alt="">' +
+                            '<span class="caption">' +
+                            '</span>' +
+                        '</a>' + 
+                    '</li>';
+                } else if (item.category == "workbook") {
+                    itemHTML =
+                    '<li class="gallery_item is_loading">' +
+                        '<a href="' + item.images.large + '">' +
+                            '<img src="' + item.images.thumb + '" alt="">' +
+                            '<span class="caption">' +
+                            '</span>' +
+                        '</a>' + 
+                    '</li>';
+                } else {
+                    itemHTML =
+                    '<li class="gallery_item is_loading">' +
+                        '<a href="' + item.images.large + '">' +
+                            '<img src="' + item.images.thumb + '" alt="">' +
+                            '<span class="caption">' +
+                            '</span>' +
+                        '</a>' + 
+                    '</li>';
+                }
                 elements.push($(itemHTML).get(0)); // DOM情報を保存
             });
 

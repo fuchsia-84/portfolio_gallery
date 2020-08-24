@@ -47,8 +47,15 @@ $(function () {
                     '<li class="gallery_item is_loading">' +
                         '<a href="' + item.images.large + '">' +
                             '<img src="' + item.images.thumb + '" alt="">' +
-                            '<span class="caption"></span>' +
-                        '</a>'
+                            '<span class="caption">' +
+                                '<span class="inner"' +
+                                    '<b class="title">' + item.title + '</b>' +
+                                    '<time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time>' +
+                                '</span>' +
+                            '</span>' +
+                        '</a>' + 
                     '</li>';
             
                 elements.push($(itemHTML).get(0)); // DOM情報を保存
@@ -66,6 +73,15 @@ $(function () {
                     $container.masonry();
                 }
             });
+
+            // リンク先にColorboxを設定
+            $container.find('a').colorbox( {
+                maxWidth: '80%',
+                maxHeight: '95%',
+                title: function() {
+                    return $(this).find('.inner').html();
+                }
+            })
 
             added_count += slice_data.length; // 追加済みアイテム数を更新
 

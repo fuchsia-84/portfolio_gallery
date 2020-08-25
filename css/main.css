@@ -4,7 +4,7 @@
 
 /* Base */
 html { font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; font-size: 14px; line-height: 1.5; }
-body { background-color: rgb(245, 245, 245); color: rgb(0, 0, 0); }
+body { background-color: aliceblue; color: #333333;}
 h1 { font-size: 100%; margin: 0; }
 img { vertical-align: middle; }
 .clearfix:before, .clearfix:after { content: " "; display: table; }
@@ -22,16 +22,17 @@ img { vertical-align: middle; }
 
 /* header */
 #header {
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid rgb(230, 230, 230);
+    display: block;
+    background-color: lightcyan;
+    border-bottom: 1px solid blue;
     padding: 32px 0;
     position: fixed;
     width: 100%;
     z-index: 10;
 }
 #header > .inner {
-    width: 950px;
-    padding: 8px 10px;
+    width: 100%;
+    padding: 0;
     margin: auto;
 }
 #header .logo {
@@ -41,15 +42,18 @@ img { vertical-align: middle; }
 
 /* main */
 .main {
-    margin: auto;
+    display: block;
+    width: calc(100% - 20px);
+    margin: 0 auto;
     padding: 100px 10px;
-    width: 100%;
+    position: relative;
 }
 
 /* gallery */
 .gallery {
-    margin: 0;
-    padding: 0;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .gallery_item {
@@ -67,6 +71,46 @@ img { vertical-align: middle; }
 }
 .gallery_item .caption {
     display: none;
+}
+
+/* モーダルウィンドウ */
+.gallery_item .content_bg {
+    display: none;
+    position: absolute;
+    width: calc(100% + 20px);
+    z-index: 998;
+    top: -110px;
+    left: -10px;
+    background-color: #ffffff;
+}
+.gallery_item .content {
+    display: none;
+    width: 80%;
+    position: absolute;
+    top: -110px;
+    left: 10%;
+    z-index: 999;
+}
+.gallery_item .content .content_img {
+    display: block;
+    width: 40%;
+    margin: 100px auto;
+}
+.gallery_item .content h1 {
+    font-size: 24px;
+    line-height: 36px;
+}
+.gallery_item .content p {
+    font-size: 12px;
+    line-height: 22px;
+}
+.gallery_item .content ul {
+    list-style-type: none;
+    margin: 10px 0;
+}
+.gallery_item .content ul li {
+    font-size: 12px;
+    line-height: 22px;
 }
 
 /* フィルター */

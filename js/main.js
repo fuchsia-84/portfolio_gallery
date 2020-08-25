@@ -45,27 +45,37 @@ $(function () {
             $.each(slice_data, function(i, item) {
                 var itemHTML ='';
                 if(item.category == "original") {
-                    itemHTML =
+                   itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a class="gallery_img" href="' + item.images.large + '">' +
-                            '<img src="' + item.images.thumb + '" alt="">' +
-                            '<span class="caption">' +
-                                '<span class="inner"' +
-                                    '<b class="title">' + item.title + '</b>' +
+                        '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
+                        '<div class="content_bg"></div>' +
+                        '<div class="content">' +
+                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                            '<div class="content_text">' + 
+                                '<h1>' + item.title +
                                     '<time class="date" datatime="' + item.date + '">' +
                                         item.date.replace(/-0?/g, '/') +
                                     '</time>' + '</br>' +
-                                    '<span class="content"' +
-                                        '<p>オリジナルWebデザイン</p>' +
-                                        'お題 : ' + item.content.odai +
-                                        'コンセプト : ' + item.content.concept +
-                                        '工夫点 : ' + item.content.description +
-                                        '<a href="' + item.content.link.xd + '">デザインカンプ(PC版/XD)</a>' +
-                                        '</p>'
-                                    '</span>' +
-                                '</span>' +
-                            '</span>' +
-                        '</a>' + 
+                                '</h1>' +
+                                '<p>オリジナルWebデザイン</p>' +
+                                '<hr>' +
+                                '<p>お題 : ' + item.content.odai + '</p>' +
+                                '<p>コンセプト : ' + item.content.concept + '</p>' +
+                                '<p>工夫点 : ' + item.content.description + '</p>' +
+                                '<br>' +
+                                '<p>リンク :</p>' +
+                                    '<ul>' +
+                                        '<li><a href="' + item.content.link.xd + '">デザインカンプ(PC版/Adobe XD)</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                        '<li><a href="' + item.content.link.design_article + '">デザイン制作まとめ記事</a></li>' +
+                                        '<li><a href="' + item.content.link.coding_article + '">コーディングまとめ記事</a></li>' +
+                                    '</ul>' +
+                            '</div>' +
+                            '<div class="toggle_btn">' +
+                                '<span>戻る</span>' +
+                            '</div>' +
+                        '</div>'
                     '</li>';
 
                 } else if (item.category == "copy") {
@@ -112,16 +122,29 @@ $(function () {
                 }
             });
 
-            /*
-            // リンク先にColorboxを設定
-            $container.find('.gallery_img').colorbox( {
-                maxWidth: '60%',
-                maxHeight: '80%',
-                title: function() {
-                    return $(this).find('.inner').html();
-                }
-            })
-            */
+            /* モーダルウィンドウの処理 */
+
+            /* 画像をクリックしたら他画像は非表示にして、各情報を表示(モーダルウィンドウ) */
+            $('.gallery_img').on('click', function() {
+                $('.gallery_img').hide();
+                $('.content').show();
+                $('.content_bg').show();
+                $('.content a').show();
+
+                $('.gallery_item').css('width', '100%');
+                /* 背景を画面一杯に表示するための処理*/
+                var content_height = $('.content').outerHeight();
+                var fix_height = 110 * 2;
+                $('.gallery_item .content_bg').css('height', content_height + fix_height);
+            });
+            /* 戻るを押したらモーダルウィンドウを非表示、画像は表示*/
+            $('.content span').on('click', function() {
+                $('.content').hide();
+                $('.content_bg').hide();
+                $('.gallery_item').css('width', 'auto');
+
+                $('.gallery_img').show();
+            });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新
 

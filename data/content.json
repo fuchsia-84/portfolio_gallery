@@ -30,9 +30,9 @@
     "content": {
       "link": {
         "src": "https://nameoflove.com/",
-        "xd": "",
-        "webpage": "",
-        "github": "" 
+        "xd": "#",
+        "webpage": "https://fuchsia-84.github.io/nameoflove_copy/",
+        "github": "https://github.com/fuchsia-84/nameoflove_copy" 
       }
     },
     "date": "2019-09-27"
@@ -43,6 +43,16 @@
     "images": {
       "thumb": "img/thumb-1-2.jpg",
       "large": "img/large-1-2.jpg"
+    },
+    "content": {
+      "link": {
+        "src_twitter_name": "あかね(@omsss22)",
+        "src_twitter": "https://twitter.com/omsss22",
+        "src_article": "https://note.com/tmy_schaf/n/n49a9b727c5b1",
+        "xd": "",
+        "webpage": "https://fuchsia-84.github.io/shiro_web_coding/",
+        "github": "https://github.com/fuchsia-84/shiro_web_coding" 
+      }
     },
     "date": "2020-02-18"
   },

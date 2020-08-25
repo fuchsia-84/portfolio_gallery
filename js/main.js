@@ -110,11 +110,31 @@ $(function () {
                 } else if (item.category == "workbook") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a class="gallery_img" href="' + item.images.large + '">' +
-                            '<img src="' + item.images.thumb + '" alt="">' +
-                            '<span class="caption">' +
-                            '</span>' +
-                        '</a>' + 
+                        '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
+                        '<div class="content_bg"></div>' +
+                        '<div class="content">' +
+                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                            '<div class="content_text">' + 
+                                '<h1>' + item.title +
+                                    '<time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time>' + '</br>' +
+                                '</h1>' +
+                                '<p>オープンな練習用の課題</p>' +
+                                '<hr>' +
+                                '<br>' +
+                                '<p>リンク :</p>' +
+                                '<ul>' +
+                                    '<li><p>課題制作 : <a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p></li>' +
+                                    '<li><a href="' + item.content.link.src_article + '">課題の公開記事</a></li>' +
+                                    '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
+                                    '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<div class="toggle_btn">' +
+                                '<span>戻る</span>' +
+                            '</div>' +
+                        '</div>'
                     '</li>';
                 } else {
                     itemHTML =

@@ -81,11 +81,31 @@ $(function () {
                 } else if (item.category == "copy") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a class="gallery_img" href="' + item.images.large + '">' +
-                            '<img src="' + item.images.thumb + '" alt="">' +
-                            '<span class="caption">' +
-                            '</span>' +
-                        '</a>' + 
+                        '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
+                        '<div class="content_bg"></div>' +
+                        '<div class="content">' +
+                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                            '<div class="content_text">' + 
+                                '<h1>' + item.title +
+                                    '<time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time>' + '</br>' +
+                                '</h1>' +
+                                '<p>オリジナルWebデザイン</p>' +
+                                '<hr>' +
+                                '<br>' +
+                                '<p>リンク :</p>' +
+                                '<ul>' +
+                                    '<li><a href="' + item.content.link.src + '">模写元サイト</a></li>' +
+                                    '<li><a href="' + item.content.link.xd + '">模写したデザインカンプ(PC/Adobe XD)</a></li>' +
+                                    '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
+                                    '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<div class="toggle_btn">' +
+                                '<span>戻る</span>' +
+                            '</div>' +
+                        '</div>'
                     '</li>';
                 } else if (item.category == "workbook") {
                     itemHTML =

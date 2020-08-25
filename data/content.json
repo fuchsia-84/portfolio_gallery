@@ -27,6 +27,14 @@
       "thumb": "img/thumb-1-5.jpg",
       "large": "img/large-1-5.jpg"
     },
+    "content": {
+      "link": {
+        "src": "https://nameoflove.com/",
+        "xd": "",
+        "webpage": "",
+        "github": "" 
+      }
+    },
     "date": "2019-09-27"
   },
   {
@@ -53,6 +61,11 @@
     "images": {
       "thumb": "img/thumb-1-4.jpg",
       "large": "img/large-1-4.jpg"
+    },
+    "content": {
+      "link": {
+        "src": "https://nameoflove.com/"
+      }
     },
     "date": "2020-03-23"
   }

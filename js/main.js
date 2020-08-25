@@ -10,6 +10,12 @@ $(function () {
             all_data = [], // すべてのJSONデータ
             filtered_data = []; // フィルタリングされたJSONデータ
         
+        var gallery_item_id = '',
+            gallery_content = '',
+            gallery_content_bg = '',
+            window_height = $(window).outerHeight(),
+            gallery_item_off_left = 0;
+
         // Masonryオプション
         $container.masonry({
             columnWidth : 230,
@@ -79,8 +85,9 @@ $(function () {
                     '</li>';
 
                 } else if (item.category == "copy") {
+                    var id_str = i.toString();
                     itemHTML =
-                    '<li class="gallery_item is_loading">' +
+                    '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content_bg"></div>' +
                         '<div class="content">' +
@@ -107,6 +114,7 @@ $(function () {
                             '</div>' +
                         '</div>'
                     '</li>';
+                    console.log(id_str);
                 } else if (item.category == "workbook") {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
@@ -183,26 +191,40 @@ $(function () {
             });
 
             /* モーダルウィンドウの処理 */
+            /*
+            var gallery_item_id = '',
+                gallery_content = '',
+                gallery_content_bg = '',
+                gallery_item_off = [],
+                gallery_item_off_left = 0;
+                window_height = $(window).outerHeight();
+            */
 
             /* 画像をクリックしたら他画像は非表示にして、各情報を表示(モーダルウィンドウ) */
             $('.gallery_img').on('click', function() {
-                $('.gallery_img').hide();
-                $('.content').show();
-                $('.content_bg').show();
-                $('.content a').show();
+                gallery_item_id = $(this).parent().attr('id');
+                gallery_content = '#'+ gallery_item_id + '> .content';
+                gallery_content_bg = '#'+ gallery_item_id + '> .content_bg';
 
-                $('.gallery_item').css('width', '100%');
-                /* 背景を画面一杯に表示するための処理*/
-                var content_height = $('.content').outerHeight();
-                var fix_height = 110 * 2;
-                $('.gallery_item .content_bg').css('height', content_height + fix_height);
+                var gallery_item_off = $(this).parent().offset();
+                gallery_item_off_left = gallery_item_off.left;
+
+                $('.gallery_img').hide();
+                $('#' + gallery_item_id).css('width', '100%');
+                $('#'+ gallery_item_id).css('left', 0);
+                $('#'+ gallery_item_id).css('top', 0);
+                $(gallery_content).show();
+                $(gallery_content_bg).show();
+                $(gallery_content + ' a').show();
+
+                $(gallery_content_bg).css('height', window_height + 110);
             });
             /* 戻るを押したらモーダルウィンドウを非表示、画像は表示*/
             $('.content span').on('click', function() {
-                $('.content').hide();
-                $('.content_bg').hide();
-                $('.gallery_item').css('width', 'auto');
-
+                $(gallery_content).hide();
+                $(gallery_content_bg).hide();
+                $('#' + gallery_item_id).css('width', 'auto');
+                $('#' + gallery_item_id).css('left', gallery_item_off_left - 10);
                 $('.gallery_img').show();
             });
 

@@ -139,11 +139,31 @@ $(function () {
                 } else {
                     itemHTML =
                     '<li class="gallery_item is_loading">' +
-                        '<a class="gallery_img" href="' + item.images.large + '">' +
-                            '<img src="' + item.images.thumb + '" alt="">' +
-                            '<span class="caption">' +
-                            '</span>' +
-                        '</a>' + 
+                        '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
+                        '<div class="content_bg"></div>' +
+                        '<div class="content">' +
+                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                            '<div class="content_text">' + 
+                                '<h1>' + item.title +
+                                    '<time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time>' + '</br>' +
+                                '</h1>' +
+                                '<p>自作ロゴ</p>' +
+                                '<hr>' +
+                                '<br>' +
+                                '<p>' + item.content.description + '</p>' +
+                                '<p>コンセプト : ' + item.content.concept + '</p>' +
+                                '<p>リンク :</p>' +
+                                '<ul>' +
+                                    '<li><a href="' + item.content.link.webpage + '">素材使用サイト</a></li>' +
+                                    '<li><a href="' + item.content.link.logo_article + '">公開Webページ</a></li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<div class="toggle_btn">' +
+                                '<span>戻る</span>' +
+                            '</div>' +
+                        '</div>'
                     '</li>';
                 }
                 elements.push($(itemHTML).get(0)); // DOM情報を保存

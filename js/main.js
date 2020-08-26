@@ -82,7 +82,8 @@ $(function () {
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
-                                    '<span>戻る</span>' +
+                                    '<span></span>' +
+                                    '<span></span>' +
                                 '</div>' +
                             '</div>'
                         '</div>' +
@@ -114,7 +115,8 @@ $(function () {
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
-                                    '<span>戻る</span>' +
+                                    '<span></span>' +
+                                    '<span></span>' +
                                 '</div>' +
                             '</div>' +
                         '</div>'
@@ -146,7 +148,8 @@ $(function () {
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
-                                    '<span>戻る</span>' +
+                                    '<span></span>' +
+                                    '<span></span>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
@@ -177,7 +180,8 @@ $(function () {
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
-                                    '<span>戻る</span>' +
+                                    '<span></span>' +
+                                    '<span></span>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
@@ -230,8 +234,8 @@ $(function () {
                 }
 
             });
-            /* 戻るを押したらモーダルウィンドウを非表示、画像は表示*/
-            $('.content span').on('click', function() {
+            /* 閉じるボタンを押したらモーダルウィンドウを非表示、画像は表示*/
+            $('.toggle_btn').on('click', function() {
                 $(gallery_content_inner).hide();
                 $(gallery_content).hide();
                 $('.gallery_img').show(); // 画像を表示し直す

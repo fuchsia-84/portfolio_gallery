@@ -74,7 +74,7 @@ img { vertical-align: middle; }
 }
 
 /* モーダルウィンドウ */
-.gallery_item .content_bg {
+.gallery_item .content {
     display: none;
     position: absolute;
     width: calc(100% + 20px);
@@ -83,15 +83,12 @@ img { vertical-align: middle; }
     left: -10px;
     background-color: #ffffff;
 }
-.gallery_item .content {
+.gallery_item .content_inner {
     display: none;
     width: 80%;
-    position: absolute;
-    top: -110px;
-    left: 10%;
-    z-index: 999;
+    margin: 100px 10%;
 }
-.gallery_item .content .content_img {
+.gallery_item .content_img {
     display: block;
     width: 40%;
     margin: 100px auto;
@@ -109,7 +106,7 @@ img { vertical-align: middle; }
     list-style-type: none;
     margin: 10px 0;
 }
-.gallery_item .content ul li {
+.gallery_item .content li {
     font-size: 12px;
     line-height: 22px;
 }

@@ -9,12 +9,14 @@ $(function () {
             added_count = 0, // 表示済みアイテム数
             all_data = [], // すべてのJSONデータ
             filtered_data = []; // フィルタリングされたJSONデータ
-        
-        var gallery_item_id = '',
-            gallery_content = '',
-            gallery_content_bg = '',
-            window_height = $(window).outerHeight(),
-            gallery_item_off_left = 0;
+
+        /* モーダルウィンドウ用*/
+        var gallery_item_id = '', // クリックした画像アイテムのid
+            gallery_content = '', // クリックした画像アイテムの情報コンテナクラス
+            gallery_content_inner = '', // クリックした画像アイテムのコンテナ内部クラス
+            gallery_item_off_left = 0, // クリックした画像アイテムサムネイルの元のleft
+            content_height = 0, // クリックした画像アイテムの情報コンテナの高さ
+            window_height = $(window).outerHeight(); // ウィンドウの高さ
 
         // Masonryオプション
         $container.masonry({
@@ -55,22 +57,22 @@ $(function () {
                    itemHTML =
                    '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
-                        '<div class="content_bg"></div>' +
                         '<div class="content">' +
-                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                            '<div class="content_text">' + 
-                                '<h1>' + item.title +
-                                    '<time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time>' + '</br>' +
-                                '</h1>' +
-                                '<p>オリジナルWebデザイン</p>' +
-                                '<hr>' +
-                                '<p>お題 : ' + item.content.odai + '</p>' +
-                                '<p>コンセプト : ' + item.content.concept + '</p>' +
-                                '<p>工夫点 : ' + item.content.description + '</p>' +
-                                '<br>' +
-                                '<p>リンク :</p>' +
+                            '<div class="content_inner">' +
+                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                                '<div class="content_text">' + 
+                                    '<h1>' + item.title +
+                                        '<time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time>' + '</br>' +
+                                    '</h1>' +
+                                    '<p>オリジナルWebデザイン</p>' +
+                                    '<hr>' +
+                                    '<p>お題 : ' + item.content.odai + '</p>' +
+                                    '<p>コンセプト : ' + item.content.concept + '</p>' +
+                                    '<p>工夫点 : ' + item.content.description + '</p>' +
+                                    '<br>' +
+                                    '<p>リンク :</p>' +
                                     '<ul>' +
                                         '<li><a href="' + item.content.link.xd + '">デザインカンプ(PC版/Adobe XD)</a></li>' +
                                         '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
@@ -78,11 +80,12 @@ $(function () {
                                         '<li><a href="' + item.content.link.design_article + '">デザイン制作まとめ記事</a></li>' +
                                         '<li><a href="' + item.content.link.coding_article + '">コーディングまとめ記事</a></li>' +
                                     '</ul>' +
-                            '</div>' +
-                            '<div class="toggle_btn">' +
-                                '<span>戻る</span>' +
-                            '</div>' +
-                        '</div>'
+                                '</div>' +
+                                '<div class="toggle_btn">' +
+                                    '<span>戻る</span>' +
+                                '</div>' +
+                            '</div>'
+                        '</div>' +
                     '</li>';
 
                 } else if (item.category == "copy") {
@@ -90,28 +93,29 @@ $(function () {
                     itemHTML =
                     '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
-                        '<div class="content_bg"></div>' +
                         '<div class="content">' +
-                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                            '<div class="content_text">' + 
-                                '<h1>' + item.title +
-                                    '<time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time>' + '</br>' +
-                                '</h1>' +
-                                '<p>オリジナルWebデザイン</p>' +
-                                '<hr>' +
-                                '<br>' +
-                                '<p>リンク :</p>' +
-                                '<ul>' +
-                                    '<li><a href="' + item.content.link.src + '">模写元サイト</a></li>' +
-                                    '<li><a href="' + item.content.link.xd + '">模写したデザインカンプ(PC/Adobe XD)</a></li>' +
-                                    '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
-                                    '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
-                                '</ul>' +
-                            '</div>' +
-                            '<div class="toggle_btn">' +
-                                '<span>戻る</span>' +
+                            '<div class="content_inner">' +
+                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                                '<div class="content_text">' + 
+                                    '<h1>' + item.title +
+                                        '<time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time>' + '</br>' +
+                                    '</h1>' +
+                                    '<p>オリジナルWebデザイン</p>' +
+                                    '<hr>' +
+                                    '<br>' +
+                                    '<p>リンク :</p>' +
+                                    '<ul>' +
+                                        '<li><a href="' + item.content.link.src + '">模写元サイト</a></li>' +
+                                        '<li><a href="' + item.content.link.xd + '">模写したデザインカンプ(PC/Adobe XD)</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="toggle_btn">' +
+                                    '<span>戻る</span>' +
+                                '</div>' +
                             '</div>' +
                         '</div>'
                     '</li>';
@@ -121,60 +125,62 @@ $(function () {
                     itemHTML =
                     '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
-                        '<div class="content_bg"></div>' +
                         '<div class="content">' +
-                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                            '<div class="content_text">' + 
-                                '<h1>' + item.title +
-                                    '<time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time>' + '</br>' +
-                                '</h1>' +
-                                '<p>オープンな練習用の課題</p>' +
-                                '<hr>' +
-                                '<br>' +
-                                '<p>リンク :</p>' +
-                                '<ul>' +
-                                    '<li><p>課題制作 : <a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p></li>' +
-                                    '<li><a href="' + item.content.link.src_article + '">課題の公開記事</a></li>' +
-                                    '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
-                                    '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
-                                '</ul>' +
+                            '<div class="content_inner">' +
+                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                                '<div class="content_text">' + 
+                                    '<h1>' + item.title +
+                                        '<time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time>' + '</br>' +
+                                    '</h1>' +
+                                    '<p>オープンな練習用の課題</p>' +
+                                    '<hr>' +
+                                    '<br>' +
+                                    '<p>リンク :</p>' +
+                                    '<ul>' +
+                                        '<li><p>課題制作 : <a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p></li>' +
+                                        '<li><a href="' + item.content.link.src_article + '">課題の公開記事</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="toggle_btn">' +
+                                    '<span>戻る</span>' +
+                                '</div>' +
                             '</div>' +
-                            '<div class="toggle_btn">' +
-                                '<span>戻る</span>' +
-                            '</div>' +
-                        '</div>'
+                        '</div>' +
                     '</li>';
                 } else {
                     var id_str = i.toString();
                     itemHTML =
                     '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
-                        '<div class="content_bg"></div>' +
                         '<div class="content">' +
-                            '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                            '<div class="content_text">' + 
-                                '<h1>' + item.title +
-                                    '<time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time>' + '</br>' +
-                                '</h1>' +
-                                '<p>自作ロゴ</p>' +
-                                '<hr>' +
-                                '<br>' +
-                                '<p>' + item.content.description + '</p>' +
-                                '<p>コンセプト : ' + item.content.concept + '</p>' +
-                                '<p>リンク :</p>' +
-                                '<ul>' +
-                                    '<li><a href="' + item.content.link.webpage + '">素材使用サイト</a></li>' +
-                                    '<li><a href="' + item.content.link.logo_article + '">公開Webページ</a></li>' +
-                                '</ul>' +
+                            '<div class="content_inner">' +
+                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
+                                '<div class="content_text">' + 
+                                    '<h1>' + item.title +
+                                        '<time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time>' + '</br>' +
+                                    '</h1>' +
+                                    '<p>自作ロゴ</p>' +
+                                    '<hr>' +
+                                    '<br>' +
+                                    '<p>' + item.content.description + '</p>' +
+                                    '<p>コンセプト : ' + item.content.concept + '</p>' +
+                                    '<p>リンク :</p>' +
+                                    '<ul>' +
+                                        '<li><a href="' + item.content.link.webpage + '">素材使用サイト</a></li>' +
+                                        '<li><a href="' + item.content.link.logo_article + '">公開Webページ</a></li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="toggle_btn">' +
+                                    '<span>戻る</span>' +
+                                '</div>' +
                             '</div>' +
-                            '<div class="toggle_btn">' +
-                                '<span>戻る</span>' +
-                            '</div>' +
-                        '</div>'
+                        '</div>' +
                     '</li>';
                 }
                 elements.push($(itemHTML).get(0)); // DOM情報を保存
@@ -197,30 +203,41 @@ $(function () {
 
             /* 画像をクリックしたら他画像は非表示にして、各情報を表示(モーダルウィンドウ) */
             $('.gallery_img').on('click', function() {
-                gallery_item_id = $(this).parent().attr('id');
-                gallery_content = '#'+ gallery_item_id + '> .content';
-                gallery_content_bg = '#'+ gallery_item_id + '> .content_bg';
+                gallery_item_id = $(this).parent().attr('id'); // クリックしたアイテムのidを取得
+                gallery_content = '#'+ gallery_item_id + ' > .content'; // クリックしたアイテムのコンテナクラス
+                gallery_content_inner = gallery_content + ' .content_inner'; // コンテナクラスのインナー
 
+                // ウィンドウを閉じた時に元の位置に戻すため、元の位置を取得
                 var gallery_item_off = $(this).parent().offset();
-                gallery_item_off_left = gallery_item_off.left;
+                gallery_item_off_left = gallery_item_off.left; // 元のleft値
 
-                $('.gallery_img').hide();
-                $('#' + gallery_item_id).css('width', '100%');
+                $('.gallery_img').hide(); // 他画像を隠す
+                $('#' + gallery_item_id).css('width', '100%'); // 横幅を画面いっぱいに
+                // 開始位置を左上端からにする
                 $('#'+ gallery_item_id).css('left', 0);
                 $('#'+ gallery_item_id).css('top', 0);
+
+                // モーダルウィンドウを表示
                 $(gallery_content).show();
-                $(gallery_content_bg).show();
+                $(gallery_content_inner).show();
                 $(gallery_content + ' a').show();
 
-                $(gallery_content_bg).css('height', window_height + 110);
+                // 全画面表示のための高さ調整
+                content_height = $(gallery_content).outerHeight(); // クリックしたアイテムのコンテナの高さ
+                // ウィンドウサイズの高さが大きいとき、コンテナのheightを100vhにする
+                if(window_height > content_height) {
+                    $(gallery_content).css('height', '100vh');
+                }
+
             });
             /* 戻るを押したらモーダルウィンドウを非表示、画像は表示*/
             $('.content span').on('click', function() {
+                $(gallery_content_inner).hide();
                 $(gallery_content).hide();
-                $(gallery_content_bg).hide();
+                $('.gallery_img').show(); // 画像を表示し直す
+
                 $('#' + gallery_item_id).css('width', 'auto');
-                $('#' + gallery_item_id).css('left', gallery_item_off_left - 10);
-                $('.gallery_img').show();
+                $('#' + gallery_item_id).css('left', gallery_item_off_left - 10); // 元の位置に直す
             });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新

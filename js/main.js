@@ -51,8 +51,9 @@ $(function () {
             $.each(slice_data, function(i, item) {
                 var itemHTML ='';
                 if(item.category == "original") {
+                    var id_str = i.toString();
                    itemHTML =
-                    '<li class="gallery_item is_loading">' +
+                   '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content_bg"></div>' +
                         '<div class="content">' +
@@ -116,8 +117,9 @@ $(function () {
                     '</li>';
                     console.log(id_str);
                 } else if (item.category == "workbook") {
+                    var id_str = i.toString();
                     itemHTML =
-                    '<li class="gallery_item is_loading">' +
+                    '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content_bg"></div>' +
                         '<div class="content">' +
@@ -145,8 +147,9 @@ $(function () {
                         '</div>'
                     '</li>';
                 } else {
+                    var id_str = i.toString();
                     itemHTML =
-                    '<li class="gallery_item is_loading">' +
+                    '<li class="gallery_item is_loading" id="gallery_item_' + id_str + '">' +
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content_bg"></div>' +
                         '<div class="content">' +
@@ -191,14 +194,6 @@ $(function () {
             });
 
             /* モーダルウィンドウの処理 */
-            /*
-            var gallery_item_id = '',
-                gallery_content = '',
-                gallery_content_bg = '',
-                gallery_item_off = [],
-                gallery_item_off_left = 0;
-                window_height = $(window).outerHeight();
-            */
 
             /* 画像をクリックしたら他画像は非表示にして、各情報を表示(モーダルウィンドウ) */
             $('.gallery_img').on('click', function() {

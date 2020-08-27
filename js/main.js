@@ -16,7 +16,9 @@ $(function () {
             gallery_content_inner = '', // クリックした画像アイテムのコンテナ内部クラス
             gallery_item_off_left = 0, // クリックした画像アイテムサムネイルの元のleft
             content_height = 0, // クリックした画像アイテムの情報コンテナの高さ
-            window_height = $(window).outerHeight(); // ウィンドウの高さ
+            window_height = $(window).outerHeight(), // ウィンドウの高さ
+            gallery_content_link_list = '', // クリックした画像アイテムのリンクリストクラス
+            link_list = []; // // クリックした画像アイテムのリンクリスト
 
         // Masonryオプション
         $container.masonry({
@@ -175,8 +177,8 @@ $(function () {
                                     '<p>コンセプト : ' + item.content.concept + '</p>' +
                                     '<p>リンク :</p>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.webpage + '">素材使用サイト</a></li>' +
-                                        '<li><a href="' + item.content.link.logo_article + '">公開Webページ</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '">ロゴ使用サイト</a></li>' +
+                                        '<li><a href="' + item.content.link.logo_article + '">ロゴ制作まとめ記事</a></li>' +
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
@@ -210,6 +212,7 @@ $(function () {
                 gallery_item_id = $(this).parent().attr('id'); // クリックしたアイテムのidを取得
                 gallery_content = '#'+ gallery_item_id + ' > .content'; // クリックしたアイテムのコンテナクラス
                 gallery_content_inner = gallery_content + ' .content_inner'; // コンテナクラスのインナー
+                gallery_content_link_list = gallery_content + ' li'; // クリックしたアイテムのリンクリストクラス
 
                 // ウィンドウを閉じた時に元の位置に戻すため、元の位置を取得
                 var gallery_item_off = $(this).parent().offset();
@@ -232,6 +235,17 @@ $(function () {
                 if(window_height > content_height) {
                     $(gallery_content).css('height', '100vh');
                 }
+
+                // リンクのリスト中、中身が"#"のものは非表示にする
+                link_list = $(gallery_content_link_list).find('a'); // リンクのリストを取得
+
+                $(link_list).each(function(i, link) {
+                    var get_href = $(link).attr('href'); // リンク先を取得
+                    if(get_href == "#") {
+                        $(link).hide(); // '#'のとき非表示
+                    }
+                });
+
 
             });
             /* 閉じるボタンを押したらモーダルウィンドウを非表示、画像は表示*/

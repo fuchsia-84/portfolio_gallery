@@ -16,6 +16,7 @@ $(function () {
             gallery_content_inner = '', // クリックした画像アイテムのコンテナ内部クラス
             gallery_item_off_left = 0, // クリックした画像アイテムサムネイルの元のleft
             content_height = 0, // クリックした画像アイテムの情報コンテナの高さ
+            image_height = 0, // クリックした画像アイテムの画像の高さ
             window_height = $(window).outerHeight(), // ウィンドウの高さ
             gallery_content_link_list = '', // クリックした画像アイテムのリンクリストクラス
             link_list = []; // // クリックした画像アイテムのリンクリスト
@@ -64,17 +65,17 @@ $(function () {
                                 '<img class="content_img" src="' + item.images.large + '" alt="">' +
                                 '<div class="content_text">' + 
                                     '<h1>' + item.title +
-                                        '<time class="date" datatime="' + item.date + '">' +
+                                        '<span><time class="date" datatime="' + item.date + '">' +
                                             item.date.replace(/-0?/g, '/') +
-                                        '</time>' + '</br>' +
+                                        '</time></span>' + '</br>' +
                                     '</h1>' +
-                                    '<p>オリジナルWebデザイン</p>' +
+                                    '<h2>Original Web Design</h2>' +
                                     '<hr>' +
-                                    '<p>お題 : ' + item.content.odai + '</p>' +
-                                    '<p>コンセプト : ' + item.content.concept + '</p>' +
-                                    '<p>工夫点 : ' + item.content.description + '</p>' +
+                                    '<h3>お題</h3>' + '<p>' + item.content.odai + '</p>' +
+                                    '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
+                                    '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
                                     '<br>' +
-                                    '<p>リンク :</p>' +
+                                    '<h3>リンク</h3>' +
                                     '<ul>' +
                                         '<li><a href="' + item.content.link.xd + '">デザインカンプ(PC版/Adobe XD)</a></li>' +
                                         '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
@@ -207,7 +208,7 @@ $(function () {
 
             /* モーダルウィンドウの処理 */
 
-            /* 画像をクリックしたら他画像は非表示にして、各情報を表示(モーダルウィンドウ) */
+            /* 画像をクリックしたら各情報を表示(モーダルウィンドウ) */
             $('.gallery_img').on('click', function() {
                 gallery_item_id = $(this).parent().attr('id'); // クリックしたアイテムのidを取得
                 gallery_content = '#'+ gallery_item_id + ' > .content'; // クリックしたアイテムのコンテナクラス
@@ -218,7 +219,7 @@ $(function () {
                 var gallery_item_off = $(this).parent().offset();
                 gallery_item_off_left = gallery_item_off.left; // 元のleft値
 
-                $('.gallery_img').hide(); // 他画像を隠す
+                //$('.gallery_img').hide(); // 他画像を隠す
                 $('#' + gallery_item_id).css('width', '100%'); // 横幅を画面いっぱいに
                 // 開始位置を左上端からにする
                 $('#'+ gallery_item_id).css('left', 0);
@@ -231,9 +232,11 @@ $(function () {
 
                 // 全画面表示のための高さ調整
                 content_height = $(gallery_content).outerHeight(); // クリックしたアイテムのコンテナの高さ
-                // ウィンドウサイズの高さが大きいとき、コンテナのheightを100vhにする
-                if(window_height > content_height) {
-                    $(gallery_content).css('height', '100vh');
+                image_height = $(gallery_content + ' img').outerHeight(); // クリックした画像アイテムの高さ
+
+                // 画像の高さがウィンドウサイズより大きいとき、コンテナのheightを画像の高さにする
+                if(image_height > window_height) {
+                    $(gallery_content).css('height', image_height);
                 }
 
                 // リンクのリスト中、中身が"#"のものは非表示にする
@@ -255,7 +258,7 @@ $(function () {
                 $('.gallery_img').show(); // 画像を表示し直す
 
                 $('#' + gallery_item_id).css('width', 'auto');
-                $('#' + gallery_item_id).css('left', gallery_item_off_left - 10); // 元の位置に直す
+                $('#' + gallery_item_id).css('left', gallery_item_off_left - 150); // 元の位置に直す
             });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新

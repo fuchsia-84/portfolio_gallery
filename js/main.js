@@ -167,16 +167,15 @@ $(function () {
                                 '<img class="content_img" src="' + item.images.large + '" alt="">' +
                                 '<div class="content_text">' + 
                                     '<h1>' + item.title +
-                                        '<time class="date" datatime="' + item.date + '">' +
-                                            item.date.replace(/-0?/g, '/') +
-                                        '</time>' + '</br>' +
+                                    '<span><time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time></span>' + '</br>' +
                                     '</h1>' +
-                                    '<p>自作ロゴ</p>' +
+                                    '<h2>Original Logo Design</h2>' +
                                     '<hr>' +
-                                    '<br>' +
-                                    '<p>' + item.content.description + '</p>' +
-                                    '<p>コンセプト : ' + item.content.concept + '</p>' +
-                                    '<p>リンク :</p>' +
+                                    '<h3>お題</h3>' + '<p>' + item.content.description + '</p>' +
+                                    '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
+                                    '<h3>リンク</h3>' +
                                     '<ul>' +
                                         '<li><a href="' + item.content.link.webpage + '">ロゴ使用サイト</a></li>' +
                                         '<li><a href="' + item.content.link.logo_article + '">ロゴ制作まとめ記事</a></li>' +

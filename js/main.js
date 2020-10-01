@@ -135,13 +135,12 @@ $(function () {
                                 '<img class="content_img" src="' + item.images.large + '" alt="">' +
                                 '<div class="content_text">' + 
                                     '<h1>' + item.title +
-                                        '<time class="date" datatime="' + item.date + '">' +
-                                            item.date.replace(/-0?/g, '/') +
-                                        '</time>' + '</br>' +
+                                    '<span><time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time></span>' + '</br>' +
                                     '</h1>' +
-                                    '<p>オープンな練習用の課題</p>' +
+                                    '<h2>Training Workbook Published</h2>' +
                                     '<hr>' +
-                                    '<br>' +
                                     '<p>リンク :</p>' +
                                     '<ul>' +
                                         '<li><p>課題制作 : <a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p></li>' +

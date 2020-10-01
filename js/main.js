@@ -141,9 +141,10 @@ $(function () {
                                     '</h1>' +
                                     '<h2>Training Workbook Published</h2>' +
                                     '<hr>' +
-                                    '<p>リンク :</p>' +
+                                    '<h3>課題制作</h3>' + 
+                                    '<p><a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p>' +
+                                    '<h3>リンク</h3>' +
                                     '<ul>' +
-                                        '<li><p>課題制作 : <a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p></li>' +
                                         '<li><a href="' + item.content.link.src_article + '">課題の公開記事</a></li>' +
                                         '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
                                         '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +

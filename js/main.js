@@ -109,7 +109,7 @@ $(function () {
                                     '<h2>Copy of Real Web Site</h2>' +
                                     '<hr>' +
                                     '<br>' +
-                                    '<p>リンク :</p>' +
+                                    '<h3>リンク</h3>' +
                                     '<ul>' +
                                         '<li><a href="' + item.content.link.src + '">模写元サイト</a></li>' +
                                         '<li><a href="' + item.content.link.xd + '">模写したデザインカンプ(PC/Adobe XD)</a></li>' +

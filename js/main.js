@@ -102,11 +102,11 @@ $(function () {
                                 '<img class="content_img" src="' + item.images.large + '" alt="">' +
                                 '<div class="content_text">' + 
                                     '<h1>' + item.title +
-                                        '<time class="date" datatime="' + item.date + '">' +
-                                            item.date.replace(/-0?/g, '/') +
-                                        '</time>' + '</br>' +
+                                    '<span><time class="date" datatime="' + item.date + '">' +
+                                        item.date.replace(/-0?/g, '/') +
+                                    '</time></span>' + '</br>' +
                                     '</h1>' +
-                                    '<p>オリジナルWebデザイン</p>' +
+                                    '<h2>Copy of Real Web Site</h2>' +
                                     '<hr>' +
                                     '<br>' +
                                     '<p>リンク :</p>' +

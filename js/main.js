@@ -106,13 +106,11 @@ $(function () {
                                     '</h1>' +
                                     '<h2>Copy of Real Web Site</h2>' +
                                     '<hr>' +
-                                    '<br>' +
-                                    '<h3>リンク</h3>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.src + '">模写元サイト</a></li>' +
-                                        '<li><a href="' + item.content.link.xd + '">模写したデザインカンプ(PC/Adobe XD)</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                        '<li><a href="' + item.content.link.src + '"><i class="fas fa-desktop"></i>Original</a></li>' +
+                                        '<li><a href="' + item.content.link.xd + '"><i class="fab fa-adobe"></i>Adobe XD (Copy)</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +

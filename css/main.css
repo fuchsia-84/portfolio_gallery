@@ -166,7 +166,7 @@ img { vertical-align: middle; }
     letter-spacing: 0.005em;
     margin-bottom: 4px;
 }
-.gallery_item .content_text .link_article_design, .gallery_item .content_text .link_article_coding {
+.gallery_item .content_text .link_article_design, .gallery_item .content_text .link_article_coding, .gallery_item .content_text .link_article_workbook {
     font-size: 12px;
     line-height: 12px;
 }

@@ -138,12 +138,12 @@ $(function () {
                                     '<h2>Training Workbook Published</h2>' +
                                     '<hr>' +
                                     '<h3>課題制作</h3>' + 
-                                    '<p><a href="' + item.content.link.src_twitter + '">' + item.content.link.src_twitter_name + '</a> さん</p>' +
-                                    '<h3>リンク</h3>' +
+                                    '<p>' + item.content.link.src_twitter_name + 'さん</p>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.src_article + '">課題の公開記事</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
+                                        '<li><a href="' + item.content.link.src_twitter + '"><i class="fab fa-twitter"></i>Author Twitter</a></li>' +
+                                        '<li><a class="link_article_workbook" href="' + item.content.link.src_article + '"><i class="fas fa-edit"></i>Article of Workbook</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +

@@ -74,14 +74,12 @@ $(function () {
                                     '<h3>お題</h3>' + '<p>' + item.content.odai + '</p>' +
                                     '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
                                     '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
-                                    '<br>' +
-                                    '<h3>リンク</h3>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.xd + '">デザインカンプ(PC版/Adobe XD)</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '">公開Webページ</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '">GitHub</a></li>' +
-                                        '<li><a href="' + item.content.link.design_article + '">デザイン制作まとめ記事</a></li>' +
-                                        '<li><a href="' + item.content.link.coding_article + '">コーディングまとめ記事</a></li>' +
+                                        '<li><a href="' + item.content.link.xd + '"><i class="fab fa-adobe"></i><span>Adobe XD</span></a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
+                                        '<li><a class="link_article_design" href="' + item.content.link.design_article + '"><i class="fas fa-book"></i>Article of Design</a></li>' +
+                                        '<li><a class="link_article_coding" href="' + item.content.link.coding_article + '"><i class="fas fa-book"></i>Article of Coding</a></li>' +
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +

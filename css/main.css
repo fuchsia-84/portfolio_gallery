@@ -170,18 +170,36 @@ font-style: italic;
     line-height: 14px;
 }
 .gallery_item .content_text ul {
+    display: block;
     list-style-type: none;
-    margin: 0 0 0 140px;
+    margin: 40px 0 0 140px;
 }
 .gallery_item .content_text li {
+    display: inline-block;
     font-size: 12px;
     line-height: 22px;
+    margin-right: 15px;
 }
 .gallery_item .content_text a {
     text-decoration: none;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.005em;
+    margin-bottom: 4px;
+}
+.gallery_item .content_text .link_article_design, .gallery_item .content_text .link_article_coding {
+    font-size: 12px;
+    line-height: 12px;
 }
 .gallery_item .content_text a:visited {
     color: #FCFCFC;
+}
+.gallery_item .content_text a i {
+    font-size: 22px;
+    line-height: 22px;
+    margin-right: 5px;
 }
 .gallery_item .toggle_btn {
     display: block;

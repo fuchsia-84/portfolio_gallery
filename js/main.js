@@ -171,10 +171,9 @@ $(function () {
                                     '<hr>' +
                                     '<h3>お題</h3>' + '<p>' + item.content.description + '</p>' +
                                     '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
-                                    '<h3>リンク</h3>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.webpage + '">ロゴ使用サイト</a></li>' +
-                                        '<li><a href="' + item.content.link.logo_article + '">ロゴ制作まとめ記事</a></li>' +
+                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                        '<li><a href="' + item.content.link.logo_article + '"><i class="fas fa-book"></i>Article</a></li>' +
                                     '</ul>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +

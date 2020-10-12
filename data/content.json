@@ -3,8 +3,8 @@
     "title": "さっぽろ水族館",
     "category": "original",
     "images": {
-      "thumb": "img/thumb-1-3.jpg",
-      "large": "img/large-1-3.jpg"
+      "thumb": "img/thumb/sapporo_aquarium_pc_thumb.jpg",
+      "large": "img/large/sapporo_aquarium_pc_large.jpg"
     },
     "content": {
       "odai": "地元にできる新しい水族館の仮想LP",
@@ -24,8 +24,8 @@
     "title": "Dearly Be Loved",
     "category": "copy",
     "images": {
-      "thumb": "img/thumb-1-5.jpg",
-      "large": "img/large-1-5.jpg"
+      "thumb": "img/thumb/dearly_be_loved_pc_thumb.jpg",
+      "large": "img/large/dearly_be_loved_pc_large.jpg"
     },
     "content": {
       "link": {
@@ -41,8 +41,8 @@
     "title": "Shiro - White Flower Shop",
     "category": "workbook",
     "images": {
-      "thumb": "img/thumb-1-2.jpg",
-      "large": "img/large-1-2.jpg"
+      "thumb": "img/thumb/shiro_pc_thumb.jpg",
+      "large": "img/large/shiro_pc_large.jpg"
     },
     "content": {
       "link": {
@@ -60,8 +60,8 @@
     "title": "Juicy Ice Cream Logo",
     "category": "logo",
     "images": {
-      "thumb": "img/thumb-1-1.jpg",
-      "large": "img/large-1-1.jpg"
+      "thumb": "img/thumb/Juicy_Ice_Cream_Logo_thumb.png",
+      "large": "img/large/Juicy_Ice_Cream_Logo_large.png"
     },
     "content": {
       "description" : "フルーツアイスクリームショップの仮想ロゴ。",
@@ -77,8 +77,8 @@
     "title": "拓北精工",
     "category": "copy",
     "images": {
-      "thumb": "img/thumb-1-4.jpg",
-      "large": "img/large-1-4.jpg"
+      "thumb": "img/thumb/takuhokuseiko_pc_thumb.jpg",
+      "large": "img/large/takuhokuseiko_pc_large.jpg"
     },
     "content": {
       "link": {

@@ -75,7 +75,7 @@ $(function () {
                                     '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
                                     '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
                                     '<ul>' +
-                                        '<li><a href="' + item.content.link.xd + '"><i class="fab fa-adobe"></i><span>Adobe XD</span></a></li>' +
+                                        '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD</a></li>' +
                                         '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
                                         '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
                                         '<li><a class="link_article_design" href="' + item.content.link.design_article + '"><i class="fas fa-book"></i>Article of Design</a></li>' +
@@ -108,7 +108,7 @@ $(function () {
                                     '<hr>' +
                                     '<ul>' +
                                         '<li><a href="' + item.content.link.src + '"><i class="fas fa-desktop"></i>Original</a></li>' +
-                                        '<li><a href="' + item.content.link.xd + '"><i class="fab fa-adobe"></i>Adobe XD (Copy)</a></li>' +
+                                        '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD (Copy)</a></li>' +
                                         '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
                                         '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
                                     '</ul>' +

@@ -226,20 +226,23 @@ img { vertical-align: middle; }
        -moz-user-select: none;
         -ms-user-select: none;
 }
+/*
 .filter_form label.ui-state-focus {
     outline: 1px dotted;
 }
+*/
 .filter_form label .ui-icon {
-    background: url(../img/sprites.png) no-repeat 0 0;
+    background: url(../img/item.png) no-repeat 0 0;
+    background-position: -40px -10px;
     display: inline-block;
     width: 20px;
-    height: 18px;
+    height: 20px;
     margin-right: 5px;
-    margin-top: 2px;
+    margin-top: 0;
     vertical-align: top;
 }
 .filter_form label.ui-state-active .ui-icon {
-    background-position: -20px 0;
+    background-position-x: -10px;
 }
 
 /* 追加読み込みボタン */

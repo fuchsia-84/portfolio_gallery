@@ -88,24 +88,36 @@ img { vertical-align: middle; }
 .gallery_item .content_inner {
     display: none;
     width: 80%;
+    height: 100vh;
     margin: 100px 10%;
 }
-.gallery_item .content_img {
+.gallery_item .content_left {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 40%;
+    height: 100vh;
     z-index: 1000;
+    overflow-y: scroll;
 }
-.gallery_item .content_text {
+.gallery_item .content_left img {
+    width: 100%;
+}
+.gallery_item .content_right {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
     width: calc(60% - 170px);
+    height: 100vh;
     z-index: 1001;
     padding-right: 170px;
+    overflow-y: scroll;
+}
+.gallery_item .content_text {
+    width: 100%;
+    height: auto;
 }
 .gallery_item .content_text h1 {
     font-weight: 900;

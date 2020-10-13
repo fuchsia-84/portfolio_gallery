@@ -62,25 +62,29 @@ $(function () {
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content">' +
                             '<div class="content_inner">' +
-                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                                '<div class="content_text">' + 
-                                    '<h1>' + item.title +
-                                        '<span><time class="date" datatime="' + item.date + '">' +
-                                            item.date.replace(/-0?/g, '/') +
-                                        '</time></span>' + '</br>' +
-                                    '</h1>' +
-                                    '<h2>Original Web Design</h2>' +
-                                    '<hr>' +
-                                    '<h3>お題</h3>' + '<p>' + item.content.odai + '</p>' +
-                                    '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
-                                    '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
-                                    '<ul>' +
-                                        '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
-                                        '<li><a class="link_article_design" href="' + item.content.link.design_article + '"><i class="fas fa-book"></i>Article of Design</a></li>' +
-                                        '<li><a class="link_article_coding" href="' + item.content.link.coding_article + '"><i class="fas fa-book"></i>Article of Coding</a></li>' +
-                                    '</ul>' +
+                                '<div class="content_left">' +
+                                    '<img src="' + item.images.large + '" alt="">' +
+                                '</div>' +
+                                '<div class="content_right">' + 
+                                    '<div class="content_text">' + 
+                                        '<h1>' + item.title +
+                                            '<span><time class="date" datatime="' + item.date + '">' +
+                                                item.date.replace(/-0?/g, '/') +
+                                            '</time></span>' + '</br>' +
+                                        '</h1>' +
+                                        '<h2>Original Web Design</h2>' +
+                                        '<hr>' +
+                                        '<h3>お題</h3>' + '<p>' + item.content.odai + '</p>' +
+                                        '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
+                                        '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
+                                        '<ul>' +
+                                            '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
+                                            '<li><a class="link_article_design" href="' + item.content.link.design_article + '"><i class="fas fa-book"></i>Article of Design</a></li>' +
+                                            '<li><a class="link_article_coding" href="' + item.content.link.coding_article + '"><i class="fas fa-book"></i>Article of Coding</a></li>' +
+                                        '</ul>' +
+                                    '</div>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
                                     '<span></span>' +
@@ -97,21 +101,25 @@ $(function () {
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content">' +
                             '<div class="content_inner">' +
-                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                                '<div class="content_text">' + 
-                                    '<h1>' + item.title +
-                                    '<span><time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time></span>' + '</br>' +
-                                    '</h1>' +
-                                    '<h2>Copy of Real Web Site</h2>' +
-                                    '<hr>' +
-                                    '<ul>' +
-                                        '<li><a href="' + item.content.link.src + '"><i class="fas fa-desktop"></i>Original</a></li>' +
-                                        '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD (Copy)</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
-                                    '</ul>' +
+                                '<div class="content_left">' +
+                                    '<img src="' + item.images.large + '" alt="">' +
+                                '</div>' +
+                                '<div class="content_right">' + 
+                                    '<div class="content_text">' + 
+                                        '<h1>' + item.title +
+                                        '<span><time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time></span>' + '</br>' +
+                                        '</h1>' +
+                                        '<h2>Copy of Real Web Site</h2>' +
+                                        '<hr>' +
+                                        '<ul>' +
+                                            '<li><a href="' + item.content.link.src + '"><i class="fas fa-desktop"></i>Original</a></li>' +
+                                            '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD (Copy)</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
+                                        '</ul>' +
+                                    '</div>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
                                     '<span></span>' +
@@ -128,23 +136,27 @@ $(function () {
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content">' +
                             '<div class="content_inner">' +
-                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                                '<div class="content_text">' + 
-                                    '<h1>' + item.title +
-                                    '<span><time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time></span>' + '</br>' +
-                                    '</h1>' +
-                                    '<h2>Training Workbook Published</h2>' +
-                                    '<hr>' +
-                                    '<h3>課題制作</h3>' + 
-                                    '<p>' + item.content.link.src_twitter_name + 'さん</p>' +
-                                    '<ul>' +
-                                        '<li><a href="' + item.content.link.src_twitter + '"><i class="fab fa-twitter"></i>Author Twitter</a></li>' +
-                                        '<li><a class="link_article_workbook" href="' + item.content.link.src_article + '"><i class="fas fa-edit"></i>Article of Workbook</a></li>' +
-                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                        '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
-                                    '</ul>' +
+                                '<div class="content_left">' +
+                                    '<img src="' + item.images.large + '" alt="">' +
+                                '</div>' +
+                                '<div class="content_right">' + 
+                                    '<div class="content_text">' + 
+                                        '<h1>' + item.title +
+                                        '<span><time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time></span>' + '</br>' +
+                                        '</h1>' +
+                                        '<h2>Training Workbook Published</h2>' +
+                                        '<hr>' +
+                                        '<h3>課題制作</h3>' + 
+                                        '<p>' + item.content.link.src_twitter_name + 'さん</p>' +
+                                        '<ul>' +
+                                            '<li><a href="' + item.content.link.src_twitter + '"><i class="fab fa-twitter"></i>Author Twitter</a></li>' +
+                                            '<li><a class="link_article_workbook" href="' + item.content.link.src_article + '"><i class="fas fa-edit"></i>Article of Workbook</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
+                                        '</ul>' +
+                                    '</div>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
                                     '<span></span>' +
@@ -160,21 +172,25 @@ $(function () {
                         '<img class="gallery_img" src="' + item.images.thumb + '" alt="">' +
                         '<div class="content">' +
                             '<div class="content_inner">' +
-                                '<img class="content_img" src="' + item.images.large + '" alt="">' +
-                                '<div class="content_text">' + 
-                                    '<h1>' + item.title +
-                                    '<span><time class="date" datatime="' + item.date + '">' +
-                                        item.date.replace(/-0?/g, '/') +
-                                    '</time></span>' + '</br>' +
-                                    '</h1>' +
-                                    '<h2>Original Logo Design</h2>' +
-                                    '<hr>' +
-                                    '<h3>お題</h3>' + '<p>' + item.content.description + '</p>' +
-                                    '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
-                                    '<ul>' +
-                                        '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                        '<li><a href="' + item.content.link.logo_article + '"><i class="fas fa-book"></i>Article</a></li>' +
-                                    '</ul>' +
+                                '<div class="content_left">' +
+                                '<img src="' + item.images.large + '" alt="">' +
+                                '</div>' +
+                                '<div class="content_right">' + 
+                                    '<div class="content_text">' + 
+                                        '<h1>' + item.title +
+                                        '<span><time class="date" datatime="' + item.date + '">' +
+                                            item.date.replace(/-0?/g, '/') +
+                                        '</time></span>' + '</br>' +
+                                        '</h1>' +
+                                        '<h2>Original Logo Design</h2>' +
+                                        '<hr>' +
+                                        '<h3>お題</h3>' + '<p>' + item.content.description + '</p>' +
+                                        '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
+                                        '<ul>' +
+                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.logo_article + '"><i class="fas fa-book"></i>Article</a></li>' +
+                                        '</ul>' +
+                                    '</div>' +
                                 '</div>' +
                                 '<div class="toggle_btn">' +
                                     '<span></span>' +
@@ -224,7 +240,11 @@ $(function () {
                 $(gallery_content_inner).show();
                 $(gallery_content + ' a').show();
 
+                // スクロールをOFFにする
+                $('body').css('overflow', 'hidden');
+
                 // 全画面表示のための高さ調整
+                /*
                 content_height = $(gallery_content).outerHeight(); // クリックしたアイテムのコンテナの高さ
                 image_height = $(gallery_content + ' img').outerHeight(); // クリックした画像アイテムの高さ
 
@@ -232,6 +252,7 @@ $(function () {
                 if(image_height > window_height) {
                     $(gallery_content).css('height', image_height);
                 }
+                */
 
                 // リンクのリスト中、中身が"#"のものは非表示にする
                 link_list = $(gallery_content_link_list).find('a'); // リンクのリストを取得

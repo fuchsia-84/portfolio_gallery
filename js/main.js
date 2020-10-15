@@ -15,9 +15,12 @@ $(function () {
             gallery_content = '', // クリックした画像アイテムの情報コンテナクラス
             gallery_content_inner = '', // クリックした画像アイテムのコンテナ内部クラス
             gallery_item_off_left = 0, // クリックした画像アイテムサムネイルの元のleft
+            gallery_item_off_top = 0, // クリックした画像アイテムサムネイルの元のtop
             content_height = 0, // クリックした画像アイテムの情報コンテナの高さ
             image_height = 0, // クリックした画像アイテムの画像の高さ
             window_height = $(window).outerHeight(), // ウィンドウの高さ
+            header_height = 0, // ヘッダーの高さ
+            main_padding_left = 0, // コンテンツ左に設定した余白の幅
             gallery_content_link_list = '', // クリックした画像アイテムのリンクリストクラス
             link_list = []; // // クリックした画像アイテムのリンクリスト
 
@@ -228,6 +231,7 @@ $(function () {
                 // ウィンドウを閉じた時に元の位置に戻すため、元の位置を取得
                 var gallery_item_off = $(this).parent().offset();
                 gallery_item_off_left = gallery_item_off.left; // 元のleft値
+                gallery_item_off_top = gallery_item_off.top; // 元のtop値
 
                 //$('.gallery_img').hide(); // 他画像を隠す
                 $('#' + gallery_item_id).css('width', '100%'); // 横幅を画面いっぱいに
@@ -280,7 +284,13 @@ $(function () {
                 $('.gallery_img').show(); // 画像を表示し直す
 
                 $('#' + gallery_item_id).css('width', 'auto');
-                $('#' + gallery_item_id).css('left', gallery_item_off_left - 150); // 元の位置に直す
+
+                // 元の位置に戻す
+                header_height = $("header").outerHeight(); // ヘッダーの高さを取得
+                main_padding_left = parseInt($('.main').css('padding-left')); // mainコンテンツの左余白を取得
+                
+                $('#' + gallery_item_id).css('left', gallery_item_off_left - main_padding_left); // left値を直す
+                $('#' + gallery_item_id).css('top', gallery_item_off_top - header_height); // top値を直す
 
                 // スクロールをONにする
                 $('body').css('overflow', 'scroll');
@@ -334,7 +344,7 @@ $(function () {
     });
 
     // スクロール時にヘッダーを変化させる
-    var header_height = $("header").outerHeight(); // ヘッダーの高さを取得
+    header_height = $("header").outerHeight(); // ヘッダーの高さを取得
     window.addEventListener('scroll', function(e){
         // ヘッダーの高さ分スクロールしたらfixedクラスでスタイルを変える
         if ( $(window).scrollTop() > header_height ) {

@@ -235,6 +235,9 @@ $(function () {
                 $('#'+ gallery_item_id).css('left', 0);
                 $('#'+ gallery_item_id).css('top', 0);
 
+                // トップにスクロール
+                scrollTo(0,0);
+
                 // モーダルウィンドウを表示
                 $(gallery_content).show();
                 $(gallery_content_inner).show();
@@ -278,6 +281,9 @@ $(function () {
 
                 $('#' + gallery_item_id).css('width', 'auto');
                 $('#' + gallery_item_id).css('left', gallery_item_off_left - 150); // 元の位置に直す
+
+                // スクロールをONにする
+                $('body').css('overflow', 'scroll');
             });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新

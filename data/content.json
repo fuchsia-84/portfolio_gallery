@@ -1,5 +1,64 @@
 [
   {
+    "title": "Shimaenaga(2019/10 ver.)",
+    "category": "workbook",
+    "images": {
+      "thumb": "img/thumb/shimaenaga_pc_thumb.jpg",
+      "large": "img/large/shimaenaga_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src_twitter_name": "ちづみ(@098ra0209)",
+        "src_twitter": "https://twitter.com/098ra0209",
+        "src_article": "https://note.com/chizumi_/n/nf0ff69e550c0",
+        "xd": "#",
+        "webpage": "https://fuchsia-84.github.io/shimaenaga_web_coding/",
+        "github": "https://github.com/fuchsia-84/shimaenaga_web_coding" 
+      }
+    },
+    "date": "2019-10-10"
+  },
+  {
+    "title": "I am Cat (2019/12 ver.",
+    "category": "workbook",
+    "images": {
+      "thumb": "img/thumb/iamcat_2_pc_thumb.jpg",
+      "large": "img/large/iamcat_2_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src_twitter_name": "ちづみ(@098ra0209)",
+        "src_twitter": "https://twitter.com/098ra0209",
+        "src_article": "",
+        "xd": "#",
+        "webpage": "",
+        "github": "" 
+      }
+    },
+    "date": "2019-12-18"
+  },
+  {
+    "title": "ACCLASSY.",
+    "category": "original",
+    "images": {
+      "thumb": "img/thumb/acclassy_pc_thumb.jpg",
+      "large": "img/large/acclassy_pc_large.jpg"
+    },
+    "content": {
+      "odai": "アクセサリーショップの仮想LP",
+      "concept": "「大人可愛い」、「上品」",
+      "description" : "背景を落ち着いた印象かつ女性らしい白/グレー/ピンクの無地とし、<br/>アクセサリー写真が映えるように工夫しました。<br/>フォントは格式ある印象のセリフ体を使用しました。",
+      "link": {
+        "xd": "https://xd.adobe.com/view/d4299dd3-fc7a-4ac1-7b25-fd399f0610b6-a218/",
+        "webpage": "https://fuchsia-84.github.io/ACCLASSY_web_coding/",
+        "github" : "https://github.com/fuchsia-84/ACCLASSY_web_coding",
+        "design_article" : "https://fuchsia-84.hatenablog.com/?page=1578315661",
+        "coding_article" : "https://fuchsia-84.hatenablog.com/entry/2020/01/10/200000"
+      }
+    },
+    "date": "2020-01-09"
+  },
+  {
     "title": "さっぽろ水族館",
     "category": "original",
     "images": {
@@ -9,7 +68,7 @@
     "content": {
       "odai": "地元にできる新しい水族館の仮想LP",
       "concept": "「札幌市」、「水族館」",
-      "description" : "メイン写真が映えるよう写真とコントラストをつけた白文字とし、</br>その他テキストや背景の配色はメイン写真から抽出した色相で<br/>明るい印象のライトトーンでまとめ、下部は濃い色で全体を安定させました。<br/>水や海が連想されるよう、波形のセクション境界にしました。",
+      "description" : "メイン写真が映えるよう写真とコントラストをつけた白文字とし、</アクセサリー写真が映えるように工夫しました。>その他テキストや背景の配色はメイン写真から抽出した色相で<br/>明るい印象のライトトーンでまとめ、下部は濃い色で全体を安定させました。<br/>水や海が連想されるよう、波形のセクション境界にしました。",
       "link": {
         "xd": "https://xd.adobe.com/view/a952b491-a376-41e8-673d-d5cc7ec60db8-df63/",
         "webpage": "#",
@@ -69,6 +128,27 @@
       "link": {
         "webpage": "https://fuchsia-84.github.io/Juicy_Ice_Cream_Web_Coding/",
         "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203000"
+      }
+    },
+    "date": "2020-03-05"
+  },
+  {
+    "title": "Juicy Ice Cream",
+    "category": "original",
+    "images": {
+      "thumb": "img/thumb/juicy_ice_cream_pc_thumb.jpg",
+      "large": "img/large/juicy_ice_cream_pc_large.jpg"
+    },
+    "content": {
+      "odai": "フルーツアイスクリームショップの仮想LP",
+      "concept": "「ポップ」、「カラフル」、「ナチュラル」",
+      "description" : "",
+      "link": {
+        "xd": "https://xd.adobe.com/view/21703983-6e3a-46f4-69b2-ed73806d8322-5741/",
+        "webpage": "https://fuchsia-84.github.io/Juicy_Ice_Cream_Web_Coding/",
+        "github" : "https://github.com/fuchsia-84/Juicy_Ice_Cream_Web_Coding",
+        "design_article" : "https://fuchsia-84.hatenablog.com/entry/2020/02/15/200000?_ga=2.208085461.678828095.1602736191-572840508.1552992493",
+        "coding_article" : "https://fuchsia-84.hatenablog.com/entry/2020/03/01/083000?_ga=2.238102855.678828095.1602736191-572840508.1552992493"
       }
     },
     "date": "2020-03-05"

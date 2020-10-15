@@ -332,4 +332,17 @@ $(function () {
             primary: 'icon-radio'
         }
     });
+
+    // スクロール時にヘッダーを変化させる
+    var header_height = $("header").outerHeight(); // ヘッダーの高さを取得
+    window.addEventListener('scroll', function(e){
+        // ヘッダーの高さ分スクロールしたらfixedクラスでスタイルを変える
+        if ( $(window).scrollTop() > header_height ) {
+            $("header").addClass("fixed");
+ 
+        // クラスを削除して元に戻す
+        } else if ( $("header").hasClass("fixed") ) {
+            $("header").removeClass("fixed");
+        }
+    });
 });

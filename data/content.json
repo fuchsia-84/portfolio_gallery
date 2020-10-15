@@ -1,81 +1,5 @@
 [
   {
-    "title": "Shimaenaga(2019/10 ver.)",
-    "category": "workbook",
-    "images": {
-      "thumb": "img/thumb/shimaenaga_pc_thumb.jpg",
-      "large": "img/large/shimaenaga_pc_large.jpg"
-    },
-    "content": {
-      "link": {
-        "src_twitter_name": "ちづみ(@098ra0209)",
-        "src_twitter": "https://twitter.com/098ra0209",
-        "src_article": "https://note.com/chizumi_/n/nf0ff69e550c0",
-        "xd": "#",
-        "webpage": "https://fuchsia-84.github.io/shimaenaga_web_coding/",
-        "github": "https://github.com/fuchsia-84/shimaenaga_web_coding" 
-      }
-    },
-    "date": "2019-10-10"
-  },
-  {
-    "title": "I am Cat (2019/12 ver.",
-    "category": "workbook",
-    "images": {
-      "thumb": "img/thumb/iamcat_2_pc_thumb.jpg",
-      "large": "img/large/iamcat_2_pc_large.jpg"
-    },
-    "content": {
-      "link": {
-        "src_twitter_name": "ちづみ(@098ra0209)",
-        "src_twitter": "https://twitter.com/098ra0209",
-        "src_article": "",
-        "xd": "#",
-        "webpage": "",
-        "github": "" 
-      }
-    },
-    "date": "2019-12-18"
-  },
-  {
-    "title": "ACCLASSY.",
-    "category": "original",
-    "images": {
-      "thumb": "img/thumb/acclassy_pc_thumb.jpg",
-      "large": "img/large/acclassy_pc_large.jpg"
-    },
-    "content": {
-      "odai": "アクセサリーショップの仮想LP",
-      "concept": "「大人可愛い」、「上品」",
-      "description" : "背景を落ち着いた印象かつ女性らしい白/グレー/ピンクの無地とし、<br/>アクセサリー写真が映えるように工夫しました。<br/>フォントは格式ある印象のセリフ体を使用しました。",
-      "link": {
-        "xd": "https://xd.adobe.com/view/d4299dd3-fc7a-4ac1-7b25-fd399f0610b6-a218/",
-        "webpage": "https://fuchsia-84.github.io/ACCLASSY_web_coding/",
-        "github" : "https://github.com/fuchsia-84/ACCLASSY_web_coding",
-        "design_article" : "https://fuchsia-84.hatenablog.com/?page=1578315661",
-        "coding_article" : "https://fuchsia-84.hatenablog.com/entry/2020/01/10/200000"
-      }
-    },
-    "date": "2020-01-09"
-  },
-  {
-    "title": "さっぽろ水族館 ロゴ",
-    "category": "logo",
-    "images": {
-      "thumb": "img/thumb/sapporo_aquarium_logo_thumb.png",
-      "large": "img/large/sapporo_aquarium_logo_large.png"
-    },
-    "content": {
-      "description" : "地元にできる新しい水族館の仮想ロゴ",
-      "concept": "「札幌市」、「水族館」",
-      "link": {
-        "webpage": "#",
-        "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203500"
-      }
-    },
-    "date": "2020-04-28"
-  },
-  {
     "title": "さっぽろ水族館",
     "category": "original",
     "images": {
@@ -97,57 +21,38 @@
     "date": "2020-04-28"
   },
   {
-    "title": "Dearly Be Loved",
-    "category": "copy",
-    "images": {
-      "thumb": "img/thumb/dearly_be_loved_pc_thumb.jpg",
-      "large": "img/large/dearly_be_loved_pc_large.jpg"
-    },
-    "content": {
-      "link": {
-        "src": "https://nameoflove.com/",
-        "xd": "#",
-        "webpage": "https://fuchsia-84.github.io/nameoflove_copy/",
-        "github": "https://github.com/fuchsia-84/nameoflove_copy" 
-      }
-    },
-    "date": "2019-09-27"
-  },
-  {
-    "title": "Shiro - White Flower Shop",
-    "category": "workbook",
-    "images": {
-      "thumb": "img/thumb/shiro_pc_thumb.jpg",
-      "large": "img/large/shiro_pc_large.jpg"
-    },
-    "content": {
-      "link": {
-        "src_twitter_name": "あかね(@omsss22)",
-        "src_twitter": "https://twitter.com/omsss22",
-        "src_article": "https://note.com/tmy_schaf/n/n49a9b727c5b1",
-        "xd": "#",
-        "webpage": "https://fuchsia-84.github.io/shiro_web_coding/",
-        "github": "https://github.com/fuchsia-84/shiro_web_coding" 
-      }
-    },
-    "date": "2020-02-18"
-  },
-  {
-    "title": "Juicy Ice Cream Logo",
+    "title": "さっぽろ水族館 ロゴ",
     "category": "logo",
     "images": {
-      "thumb": "img/thumb/Juicy_Ice_Cream_Logo_thumb.png",
-      "large": "img/large/Juicy_Ice_Cream_Logo_large.png"
+      "thumb": "img/thumb/sapporo_aquarium_logo_thumb.png",
+      "large": "img/large/sapporo_aquarium_logo_large.png"
     },
     "content": {
-      "description" : "フルーツアイスクリームショップの仮想ロゴ。",
-      "concept": "「ポップ」、「カラフル」、「ナチュラル」",
+      "description" : "地元にできる新しい水族館の仮想ロゴ",
+      "concept": "「札幌市」、「水族館」",
       "link": {
-        "webpage": "https://fuchsia-84.github.io/Juicy_Ice_Cream_Web_Coding/",
-        "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203000"
+        "webpage": "#",
+        "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203500"
       }
     },
-    "date": "2020-03-05"
+    "date": "2020-04-28"
+  },
+  {
+    "title": "拓北精工",
+    "category": "copy",
+    "images": {
+      "thumb": "img/thumb/takuhokuseiko_pc_thumb.jpg",
+      "large": "img/large/takuhokuseiko_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src": "https://k-toyoseiko.co.jp/",
+        "xd": "#",
+        "webpage": "#",
+        "github": "#" 
+      }
+    },
+    "date": "2020-03-23"
   },
   {
     "title": "Juicy Ice Cream",
@@ -171,20 +76,115 @@
     "date": "2020-03-05"
   },
   {
-    "title": "拓北精工",
-    "category": "copy",
+    "title": "Juicy Ice Cream Logo",
+    "category": "logo",
     "images": {
-      "thumb": "img/thumb/takuhokuseiko_pc_thumb.jpg",
-      "large": "img/large/takuhokuseiko_pc_large.jpg"
+      "thumb": "img/thumb/Juicy_Ice_Cream_Logo_thumb.png",
+      "large": "img/large/Juicy_Ice_Cream_Logo_large.png"
+    },
+    "content": {
+      "description" : "フルーツアイスクリームショップの仮想ロゴ。",
+      "concept": "「ポップ」、「カラフル」、「ナチュラル」",
+      "link": {
+        "webpage": "https://fuchsia-84.github.io/Juicy_Ice_Cream_Web_Coding/",
+        "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203000"
+      }
+    },
+    "date": "2020-03-05"
+  },
+  {
+    "title": "Shiro - White Flower Shop",
+    "category": "workbook",
+    "images": {
+      "thumb": "img/thumb/shiro_pc_thumb.jpg",
+      "large": "img/large/shiro_pc_large.jpg"
     },
     "content": {
       "link": {
-        "src": "https://k-toyoseiko.co.jp/",
+        "src_twitter_name": "あかね(@omsss22)",
+        "src_twitter": "https://twitter.com/omsss22",
+        "src_article": "https://note.com/tmy_schaf/n/n49a9b727c5b1",
         "xd": "#",
-        "webpage": "#",
-        "github": "#" 
+        "webpage": "https://fuchsia-84.github.io/shiro_web_coding/",
+        "github": "https://github.com/fuchsia-84/shiro_web_coding" 
       }
     },
-    "date": "2020-03-23"
+    "date": "2020-02-18"
+  },
+  {
+    "title": "ACCLASSY.",
+    "category": "original",
+    "images": {
+      "thumb": "img/thumb/acclassy_pc_thumb.jpg",
+      "large": "img/large/acclassy_pc_large.jpg"
+    },
+    "content": {
+      "odai": "アクセサリーショップの仮想LP",
+      "concept": "「大人可愛い」、「上品」",
+      "description" : "背景を落ち着いた印象かつ女性らしい白/グレー/ピンクの無地とし、<br/>アクセサリー写真が映えるように工夫しました。<br/>フォントは格式ある印象のセリフ体を使用しました。",
+      "link": {
+        "xd": "https://xd.adobe.com/view/d4299dd3-fc7a-4ac1-7b25-fd399f0610b6-a218/",
+        "webpage": "https://fuchsia-84.github.io/ACCLASSY_web_coding/",
+        "github" : "https://github.com/fuchsia-84/ACCLASSY_web_coding",
+        "design_article" : "https://fuchsia-84.hatenablog.com/?page=1578315661",
+        "coding_article" : "https://fuchsia-84.hatenablog.com/entry/2020/01/10/200000"
+      }
+    },
+    "date": "2020-01-09"
+  },
+  {
+    "title": "I am Cat (2019/12 ver.",
+    "category": "workbook",
+    "images": {
+      "thumb": "img/thumb/iamcat_2_pc_thumb.jpg",
+      "large": "img/large/iamcat_2_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src_twitter_name": "ちづみ(@098ra0209)",
+        "src_twitter": "https://twitter.com/098ra0209",
+        "src_article": "",
+        "xd": "#",
+        "webpage": "",
+        "github": "" 
+      }
+    },
+    "date": "2019-12-18"
+  },
+  {
+    "title": "Shimaenaga(2019/10 ver.)",
+    "category": "workbook",
+    "images": {
+      "thumb": "img/thumb/shimaenaga_pc_thumb.jpg",
+      "large": "img/large/shimaenaga_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src_twitter_name": "ちづみ(@098ra0209)",
+        "src_twitter": "https://twitter.com/098ra0209",
+        "src_article": "https://note.com/chizumi_/n/nf0ff69e550c0",
+        "xd": "#",
+        "webpage": "https://fuchsia-84.github.io/shimaenaga_web_coding/",
+        "github": "https://github.com/fuchsia-84/shimaenaga_web_coding" 
+      }
+    },
+    "date": "2019-10-10"
+  },
+  {
+    "title": "Dearly Be Loved",
+    "category": "copy",
+    "images": {
+      "thumb": "img/thumb/dearly_be_loved_pc_thumb.jpg",
+      "large": "img/large/dearly_be_loved_pc_large.jpg"
+    },
+    "content": {
+      "link": {
+        "src": "https://nameoflove.com/",
+        "xd": "#",
+        "webpage": "https://fuchsia-84.github.io/nameoflove_copy/",
+        "github": "https://github.com/fuchsia-84/nameoflove_copy" 
+      }
+    },
+    "date": "2019-09-27"
   }
 ]

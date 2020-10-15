@@ -59,6 +59,23 @@
     "date": "2020-01-09"
   },
   {
+    "title": "さっぽろ水族館 ロゴ",
+    "category": "logo",
+    "images": {
+      "thumb": "img/thumb/sapporo_aquarium_logo_thumb.png",
+      "large": "img/large/sapporo_aquarium_logo_large.png"
+    },
+    "content": {
+      "description" : "地元にできる新しい水族館の仮想ロゴ",
+      "concept": "「札幌市」、「水族館」",
+      "link": {
+        "webpage": "#",
+        "logo_article" : "https://fuchsia-84.hatenablog.com/entry/2020/05/07/203500"
+      }
+    },
+    "date": "2020-04-28"
+  },
+  {
     "title": "さっぽろ水族館",
     "category": "original",
     "images": {
@@ -77,7 +94,7 @@
         "coding_article" : "#"
       }
     },
-    "date": "2020-05"
+    "date": "2020-04-28"
   },
   {
     "title": "Dearly Be Loved",

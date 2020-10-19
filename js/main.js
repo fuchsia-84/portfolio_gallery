@@ -270,6 +270,8 @@ $(function () {
                 $(gallery_content_inner).show();
                 $(gallery_content + ' a').show();
 
+                // 自己紹介用コンテンツを非表示にする
+                $('#about_btn').hide();
                 // スクロールをOFFにする
                 $('body').css('overflow', 'hidden');
                 /*
@@ -315,6 +317,8 @@ $(function () {
                 $('#' + gallery_item_id).css('left', gallery_item_off_left - main_padding_left); // left値を直す
                 $('#' + gallery_item_id).css('top', gallery_item_off_top - header_height); // top値を直す
 
+                // 自己紹介用コンテンツを表示する
+                $('#about_btn').show();
                 // スクロールをONにする
                 $('body').css('overflow', 'scroll');
             });

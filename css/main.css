@@ -72,6 +72,265 @@ img { vertical-align: middle; }
     position: relative;
 }
 
+/* about btn */
+.about_btn {
+    display: block;
+    position: fixed;
+    z-index: 1100;
+    color: #3E4C75;
+}
+.about_btn .circle_btn {
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: calc(100vh - 150px);
+    left: 150px;
+    z-index: 1103;
+    border: 10px solid #FCFCFC;
+    border-radius: 50%;
+}
+.about_btn .about_menu {
+    display: none;
+    position: relative;
+    width: auto;
+    height: 75px;
+    left: 200px;
+    top: calc(100vh - 75px);
+    padding: 0 50px 0 100px;
+    background: #FCFCFC;
+    border-radius: 75px;
+    z-index: 1101;
+
+}
+.about_btn .about_menu p {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-top: 28px;
+    margin-right: 35px;
+}
+.about_btn .about_menu p span {
+    font-weight: 900;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+.about_btn .about_menu p .view_about {
+    cursor: pointer;
+}
+.about_btn .about_menu p .view_about:hover {
+    color: #F571A3;
+}
+.about_btn .about_menu p .mark {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+.about_btn .separator {
+    display: block;
+    position: absolute;
+    top: 37.5px;
+    left: 225px;
+    width: 20px;
+    border: 1px solid #3E4C75;
+    transform: rotate(90deg);
+    z-index: 1102;
+}
+.about_btn ul {
+    display: inline-block;
+    list-style: none;
+    margin-top: 25.5px;
+}
+.about_btn ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+.about_btn ul li:last-child {
+   margin-right: 0;
+}
+.about_btn ul li a {
+    text-decoration: none;
+    color: #3E4C75;
+    font-size: 30px;
+}
+.about_btn ul li a:visited {
+    color: #3E4C75;
+}
+.about_btn ul li a:hover {
+    color: #F571A3;
+}
+
+/* about */
+.about {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0,0.6);
+    z-index: 1200;
+}
+.about .about_inner {
+    display: block;
+    width: calc(100% - 120px);
+    height: auto;
+    margin: 0 auto;
+    z-index: 1201;
+}
+.about .about_left {
+    display: block;
+    float: left;
+    width: 50%;
+    height: calc(100vh - 150px);
+    margin: 100px 0;
+    background-image: url(../img/avatar_top_1.jpg);
+    background-size: cover;
+    border-radius: 10px 0 0 10px;
+    overflow: scroll;
+}
+.about .about_left .profile_pic {
+    display: block;
+    max-width: 280px;
+    width: 35vh;
+    max-height: 280px;
+    height: 35vh;
+    margin: 100px auto 0;
+    border: 10px solid #FCFCFC;
+    border-radius: 50%;
+}
+.about .about_left .profile {
+    text-align: center;
+}
+.about .about_left .profile_text {
+    display: block;
+    margin: 50px auto;
+}
+.about .about_left .profile_text h1 {
+    font-weight: 900;
+    font-style: normal;
+    font-size: 44px;
+    letter-spacing: 0.1em;
+}
+.about .about_left .profile_text p {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 33px;
+    letter-spacing: 0.1em;
+}
+.about .about_left .profile_link {
+    list-style: none;
+    margin-bottom: 50px;
+}
+.about .about_left .profile_link li {
+    display: inline-block;
+    margin-right: 30px;
+}
+.about .about_left .profile_link li:last-child{
+    margin-right: 0;
+}
+.about .about_left .profile_link li a {
+    text-decoration: none;
+    color: #3E4C75;
+    font-size: 40px;
+}
+.about .about_left .profile_link li a:visited {
+    color: #3E4C75;
+}
+.about .about_left .profile_link li a:hover {
+    color: #F571A3;
+}
+.about .about_right {
+    display: block;
+    float: right;
+    width: 50%;
+    height: calc(100vh - 150px);
+    margin: 100px 0;
+    background: #FCFCFC;
+    border-radius: 0 10px 10px 0;
+    color: #3E4C75;
+    overflow: scroll;
+}
+.about .about_right h1 {
+    width: 100%;
+    border-bottom: 2px solid #3E4C75;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.15em;
+}
+.about .about_right h1 span {
+    font-size: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+}
+.about .about_right dl {
+    margin-top: 15px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 19px;
+}
+.about .about_right dl dt {
+    float: left;
+    margin: 0 8px 0 20px;
+    letter-spacing: 0.08em;
+}
+.about .about_right dl dd {
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    letter-spacing: 0.1em;
+}
+.about .about_right .education {
+    display: block;
+    width: 80%;
+    margin: 100px auto 30px;
+}
+.about .about_right .certification {
+    display: block;
+    width: 80%;
+    margin: 0 auto 30px;
+}
+.about .about_right .thesis {
+    display: block;
+    width: 80%;
+    margin: 0 auto 30px;
+}
+.about .about_toggle_btn {
+    display: block;
+    position: absolute;
+    top: 150px;
+    right: 110px;
+    width: 50px;
+    height: 50px;
+    background: #FCFCFC;
+    cursor: pointer;
+    color: #3E4C75;
+}
+
+.about .about_toggle_btn span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    background: #3E4C75;
+    border: 2px solid #3E4C75;
+    border-radius: 10px;
+}
+
+.about .about_toggle_btn span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+    left: -1px;
+}
+.about .about_toggle_btn span:nth-child(2) {
+    transform: rotate(45deg);
+    top: calc(50% - 1px);
+    left: -1px;
+}
+
+
+
 /* gallery */
 .gallery {
     display: block;

@@ -1,5 +1,28 @@
 $(function () {
+    
+    /*自己紹介用ボタンの処理*/
+    $('#about_btn').each(function() {
 
+        /* ボタンクリックで自己紹介用のメニューの表示/非表示を切り替える*/
+        $('#about_btn').mouseover(function() {
+            $('.about_menu').show();
+        });
+        $('#about_btn').mouseout(function() {
+            $('.about_menu').hide();
+        });
+
+        /* Fuchsia の文字クリックで詳細情報とメニューの表示/非表示を切り替える */
+        $('#view_about').on('click', function() {
+            $('#about').show();
+            $('#about_btn').hide();
+        });
+        $('#about_toggle_btn').on('click', function() {
+            $('#about').hide();
+            $('#about_btn').show();
+        });
+    });
+
+    /* 画像ギャラリーの処理*/
     $('#gallery').each(function() {
         
         var $container = $(this),

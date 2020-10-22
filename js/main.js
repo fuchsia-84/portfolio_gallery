@@ -104,11 +104,11 @@ $(function () {
                                         '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
                                         '<h3>工夫点</h3>' + '<p>' + item.content.description + '</p>' +
                                         '<ul>' +
-                                            '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD</a></li>' +
-                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
-                                            '<li><a class="link_article_design" href="' + item.content.link.design_article + '"><i class="fas fa-book"></i>Article of Design</a></li>' +
-                                            '<li><a class="link_article_coding" href="' + item.content.link.coding_article + '"><i class="fas fa-book"></i>Article of Coding</a></li>' +
+                                            '<li><a href="' + item.content.link.xd + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-edit"></i>Adobe XD</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '" target="_blank" rel="noopener noreferrer" ><i class="fab fa-github"></i>GitHub</a></li>' +
+                                            '<li><a class="link_article_design" href="' + item.content.link.design_article + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-book"></i>Article of Design</a></li>' +
+                                            '<li><a class="link_article_coding" href="' + item.content.link.coding_article + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-book"></i>Article of Coding</a></li>' +
                                         '</ul>' +
                                     '</div>' +
                                 '</div>' +
@@ -140,10 +140,10 @@ $(function () {
                                         '<h2>Copy of Real Web Site</h2>' +
                                         '<hr>' +
                                         '<ul>' +
-                                            '<li><a href="' + item.content.link.src + '"><i class="fas fa-desktop"></i>Original</a></li>' +
-                                            '<li><a href="' + item.content.link.xd + '"><i class="fas fa-edit"></i>Adobe XD (Copy)</a></li>' +
-                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
-                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
+                                            '<li><a href="' + item.content.link.src + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-desktop"></i>Original</a></li>' +
+                                            '<li><a href="' + item.content.link.xd + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-edit"></i>Adobe XD (Copy)</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '" target="_blank" rel="noopener noreferrer" ><i class="fab fa-github"></i>GitHub (Copy)</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-desktop"></i>Webpage (Copy)</a></li>' +
                                         '</ul>' +
                                     '</div>' +
                                 '</div>' +
@@ -177,10 +177,10 @@ $(function () {
                                         '<h3>課題制作</h3>' + 
                                         '<p>' + item.content.link.src_twitter_name + 'さん</p>' +
                                         '<ul>' +
-                                            '<li><a href="' + item.content.link.src_twitter + '"><i class="fab fa-twitter"></i>Author Twitter</a></li>' +
-                                            '<li><a class="link_article_workbook" href="' + item.content.link.src_article + '"><i class="fas fa-edit"></i>Article of Workbook</a></li>' +
-                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                            '<li><a href="' + item.content.link.github + '"><i class="fab fa-github"></i>GitHub</a></li>' +
+                                            '<li><a href="' + item.content.link.src_twitter + '" target="_blank" rel="noopener noreferrer" ><i class="fab fa-twitter"></i>Author Twitter</a></li>' +
+                                            '<li><a class="link_article_workbook" href="' + item.content.link.src_article + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-edit"></i>Article of Workbook</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.github + '" target="_blank" rel="noopener noreferrer" ><i class="fab fa-github"></i>GitHub</a></li>' +
                                         '</ul>' +
                                     '</div>' +
                                 '</div>' +
@@ -213,8 +213,8 @@ $(function () {
                                         '<h3>お題</h3>' + '<p>' + item.content.description + '</p>' +
                                         '<h3>コンセプト</h3>' + '<p>' + item.content.concept + '</p>' +
                                         '<ul>' +
-                                            '<li><a href="' + item.content.link.webpage + '"><i class="fas fa-desktop"></i>Webpage</a></li>' +
-                                            '<li><a href="' + item.content.link.logo_article + '"><i class="fas fa-book"></i>Article</a></li>' +
+                                            '<li><a href="' + item.content.link.webpage + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-desktop"></i>Webpage</a></li>' +
+                                            '<li><a href="' + item.content.link.logo_article + '" target="_blank" rel="noopener noreferrer" ><i class="fas fa-book"></i>Article</a></li>' +
                                         '</ul>' +
                                     '</div>' +
                                 '</div>' +

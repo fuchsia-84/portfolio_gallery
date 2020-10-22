@@ -1,5 +1,19 @@
 $(function () {
-    
+    /*お問い合わせフォームボタンの処理*/
+    $('.contact_btn').each(function() {
+        $('.contact_btn').on('click', function() {
+            $('#contact').show();
+            $('#header').hide();
+            $('.main').hide();
+            $('#about_btn').hide();
+        });
+        $('.contact_toggle_btn').on('click', function() {
+            $('#contact').hide();
+            $('#header').show();
+            $('.main').show();
+            $('#about_btn').show();
+        });
+    });
     /*自己紹介用ボタンの処理*/
     $('#about_btn').each(function() {
 

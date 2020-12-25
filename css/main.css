@@ -36,8 +36,6 @@ img { vertical-align: middle; }
     font-size: 22px;
     letter-spacing: 0.15em;
     text-decoration: none;
-}
-#header .logo a:visited {
     color: #FCFCFC;
 }
 #header.fixed {
@@ -50,9 +48,6 @@ img { vertical-align: middle; }
     background: #FCFCFC;
     color: #3E4C75;
 }
-#header.fixed .logo a:visited {
-    color: #3E4C75;
-}
 #header.fixed .logo {
     margin-top: 10px;
     margin-left: 50px;
@@ -61,6 +56,7 @@ img { vertical-align: middle; }
     font-style: normal;
     font-size: 18px;
     text-decoration: none;
+    color: #3E4C75;
 }
 
 /* main */

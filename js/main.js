@@ -29,8 +29,6 @@ $(function () {
     */
     function switch_about_menu() {
         window_width = $(window).width();
-        console.log(window_width);
-        console.log(border_pc_tab);
 
         if (window_width > border_pc_tab) {
             // PC閲覧時は写真円枠ボタンにマウスオーバーで
@@ -40,14 +38,12 @@ $(function () {
             $('#about_btn').mouseout(function() {
                 $('.about_menu').removeClass('open');
             });
-            console.log('PCで閲覧');
         } else {
             // スマホ閲覧時は+/-のボタンクリックで
             $('.circle_btn_tab').on('click', function(){
                 $('.circle_btn_tab').toggleClass('open');
                 $('.about_menu').toggleClass('open');
             });
-            console.log('スマホで閲覧');
         }
     }
 
@@ -201,7 +197,6 @@ $(function () {
                             '</div>' +
                         '</div>'
                     '</li>';
-                    console.log(id_str);
                 } else if (item.category == "workbook") {
                     var id_str = i.toString();
                     itemHTML =

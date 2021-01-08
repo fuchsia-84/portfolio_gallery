@@ -253,17 +253,6 @@ img { vertical-align: middle; }
 }
 .about_btn .circle_btn_tab {
     display: none;
-    /*
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    top: calc(100vh - 200px);
-    left: 150px;
-    z-index: 1103;
-    border: 10px solid #FCFCFC;
-    border-radius: 50%;
-    background-color: #3E4C75;
-    */
 }
 .about_btn .about_menu {
     display: none;

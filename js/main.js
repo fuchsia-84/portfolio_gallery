@@ -1,4 +1,5 @@
 $(function () {
+
     /*お問い合わせフォームボタンの処理*/
     $('.contact_btn').each(function() {
         $('.contact_btn').on('click', function() {
@@ -14,19 +15,51 @@ $(function () {
             $('#about_btn').show();
         });
     });
+
+
     /*自己紹介用ボタンの処理*/
+    var window_width; // ウィンドウサイズ(横幅)
+    var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)
+    switch_about_menu(); // 自己紹介用メニューの表示/非表示を切り替える
+    $(window).on('resize', function(){
+        switch_about_menu(); // ウィンドウリサイズ時も同様にする
+    });
+    /*
+    switch_about_menu - 自己紹介用メニューの表示/非表示を切り替える
+    */
+    function switch_about_menu() {
+        window_width = $(window).width();
+        console.log(window_width);
+        console.log(border_pc_tab);
+
+        if (window_width > border_pc_tab) {
+            // PC閲覧時は写真円枠ボタンにマウスオーバーで
+            $('#about_btn').mouseover(function() {
+                $('.about_menu').addClass('open');
+            });
+            $('#about_btn').mouseout(function() {
+                $('.about_menu').removeClass('open');
+            });
+            console.log('PCで閲覧');
+        } else {
+            // スマホ閲覧時は+/-のボタンクリックで
+            $('.circle_btn_tab').on('click', function(){
+                $('.circle_btn_tab').toggleClass('open');
+                $('.about_menu').toggleClass('open');
+            });
+            console.log('スマホで閲覧');
+        }
+    }
+
+    /*自己紹介の詳細情報とメニューの表示/非表示を切り替える*/
     $('#about_btn').each(function() {
-
-        /* ボタンクリックで自己紹介用のメニューの表示/非表示を切り替える*/
-        $('#about_btn').mouseover(function() {
-            $('.about_menu').show();
-        });
-        $('#about_btn').mouseout(function() {
-            $('.about_menu').hide();
-        });
-
-        /* Fuchsia の文字クリックで詳細情報とメニューの表示/非表示を切り替える */
+        // PC、タブレット閲覧時はFuchsia の文字クリックで
         $('#view_about').on('click', function() {
+            $('#about').show();
+            $('#about_btn').hide();
+        });
+        // スマホ時はアイコンクリックで
+        $('#view_about_sp').on('click', function() {
             $('#about').show();
             $('#about_btn').hide();
         });
@@ -286,8 +319,17 @@ $(function () {
 
                 // 自己紹介用コンテンツを非表示にする
                 $('#about_btn').hide();
-                // スクロールをOFFにする
-                $('body').css('overflow', 'hidden');
+
+                // PC閲覧時はスクロールをOFF
+                if (window.matchMedia('(min-width: 600px)').matches) {
+                    $('body').css('overflow', 'hidden');
+                // スマホ閲覧時はスクロールをON、バックの画像とヘッダーを非表示
+                } else if (window.matchMedia('(max-width: 599px)').matches) {
+                    $('body').css('overflow', 'visible');
+                    $('.gallery_img').hide();
+                    $('#gallery').css('height', '0');
+                    $('#header').hide();
+                }
                 /*
                 ToDo : このままだとスマホではスクロールOFFにならない。
                 レスポンシブ対応時に注意
@@ -335,6 +377,8 @@ $(function () {
                 $('#about_btn').show();
                 // スクロールをONにする
                 $('body').css('overflow', 'scroll');
+                // スマホ時非表示になったヘッダーも表示
+                $('#header').show();
             });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新

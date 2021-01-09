@@ -253,6 +253,7 @@ img { vertical-align: middle; }
 }
 .about_btn .circle_btn_tab {
     display: none;
+    cursor: pointer;
 }
 .about_btn .about_menu {
     display: none;

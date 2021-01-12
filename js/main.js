@@ -1,22 +1,5 @@
 $(function () {
 
-    /*お問い合わせフォームボタンの処理*/
-    $('.contact_btn').each(function() {
-        $('.contact_btn').on('click', function() {
-            $('#contact').show();
-            $('#header').hide();
-            $('.main').hide();
-            $('#about_btn').hide();
-        });
-        $('.contact_toggle_btn').on('click', function() {
-            $('#contact').hide();
-            $('#header').show();
-            $('.main').show();
-            $('#about_btn').show();
-        });
-    });
-
-
     /*自己紹介用ボタンの処理*/
     var window_width; // ウィンドウサイズ(横幅)
     var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)

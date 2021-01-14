@@ -71,6 +71,7 @@ $(function () {
         window_width = $(window).width();
 
         if (window_width > border_pc_tab) {
+
             // PC閲覧時は写真円枠ボタンにマウスオーバーで
             $('#about_btn').mouseover(function() {
                 $('.about_menu').addClass('open');
@@ -78,11 +79,21 @@ $(function () {
             $('#about_btn').mouseout(function() {
                 $('.about_menu').removeClass('open');
             });
+            $('#about_btn').on('click', function() {
+                $('.about_menu').toggleClass('open'); // クリックでも閉じられるように
+            });
+
         } else {
+
             // スマホ閲覧時は+/-のボタンクリックで
             $('.circle_btn_tab').on('click', function(){
-                $('.circle_btn_tab').toggleClass('open');
-                $('.about_menu').toggleClass('open');
+                if ($('.circle_btn_tab').hasClass('open')) {
+                    $('.circle_btn_tab').removeClass('open');
+                    $('.about_menu').removeClass('open');
+                } else {
+                    $('.circle_btn_tab').addClass('open');
+                    $('.about_menu').addClass('open');
+                }
             });
         }
     }

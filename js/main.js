@@ -1,5 +1,62 @@
 $(function () {
 
+    /* プログレス表示 */
+    window.onload = images_progress();
+    /*
+    images_progress - 画像の読み込み状況を表示する
+    */
+    function images_progress() {
+        var $progress = $('#progress'), // プログレス表示全体のコンテナ
+        $progress_bar = $progress.find('.progress_bar'), // プログレス表示のバー部分
+        $progress_text = $progress.find('.progress_text'), // プログレス表示のテキスト部分
+
+        // imagesLoadedライブラリでbody要素内の画像の読み込み状況を監視、
+        // body全体の画像総数をカウント
+        img_load = imagesLoaded('body'),
+        img_total = img_load.images.length,
+
+        // 読込完了した画像カウンターとプログレス表示の現在値
+        img_loaded = 0,
+        current = 0,
+
+        // 1秒間に60回のペースで読込状況をチェックして表示を更新
+        progress_timer = setInterval(update_progress, 1000/60);
+
+        // imagesLoadedで画像読込をカウント
+        img_load.on('progress', function() {
+            img_loaded++;
+        });
+
+        /*
+        update_progress - 画像読込の状況をもとにプログレス表示を更新する
+        */
+        function update_progress () {
+            var target = (img_loaded / img_total) * 100; // 読込完了パーセンテージ
+
+            current += (target - current) * 0.1; // currentとtarget間の距離をもとにイージング
+
+            // 表示バーの幅とテキストにcurrentの値を反映
+            $progress_bar.css({width: current + '%'});
+            $progress_text.text(Math.floor(current) + '%');
+
+            // currentが100になったら終了
+            if(current >= 100) {
+                clearInterval(progress_timer);
+                $progress.addClass('progress_complete');
+                $progress_bar.add($progress_text)
+                        .delay(500)
+                        .animate({opacity: 0}, 500, function() {
+                            $progress.animate({top: '-100%'}, 1000, 'easeInOutQuint');
+                        });
+                $('body').css({overflow: 'visible'});
+                $('.main').css({height: 'auto'});
+            }
+            // currentが99.9より大きければ終了と判定する
+            if (current > 99.99) {
+                current = 100;
+            }
+        }
+    }
     /*自己紹介用ボタンの処理*/
     var window_width; // ウィンドウサイズ(横幅)
     var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)

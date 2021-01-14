@@ -3,8 +3,8 @@
 
 
 /* Base */
-html { font-family: "brandon-grotesque", "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;}
-body { background-color: #3E4C75; color: #FCFCFC;}
+html { font-family: "brandon-grotesque", "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; overflow: auto;}
+body { background-color: #3E4C75; color: #FCFCFC; overflow: hidden;}
 h1 { font-size: 100%; margin: 0; }
 img { vertical-align: middle; }
 .clearfix:before, .clearfix:after { content: " "; display: table; }
@@ -119,6 +119,7 @@ img { vertical-align: middle; }
 .main {
     display: block;
     width: calc(100% - 300px);
+    height: 0;
     margin: 0 auto;
     padding: 100px 150px;
     position: relative;
@@ -136,6 +137,37 @@ img { vertical-align: middle; }
         margin: 0 auto;
         padding: 200px 40px;
     }
+}
+/* progress */
+.progress {
+    display: block;
+    background-color: #3E4C75;
+    color: #FCFCFC;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+.progress_bar {
+    display: block;
+    border-top: 1px solid #666666;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    z-index: 10000;
+}
+.progress_text {
+    display: block;
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: 10px;
+    text-align: center;
+    z-index: 10001;
+}
+.progress_complete .progress_bar {
+    border-top-color: #FCFCFC;
 }
 /* about btn */
 .about_btn {

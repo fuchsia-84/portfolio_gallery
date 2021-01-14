@@ -283,7 +283,7 @@ img { vertical-align: middle; }
         position: absolute;
         width: 50px;
         height: 50px;
-        top: calc(100vh - 80px);
+        top: calc(100vh - 200px);
         left: 50px;
         z-index: 1103;
         border: 5px solid #FCFCFC;
@@ -316,7 +316,7 @@ img { vertical-align: middle; }
         display: none;
         height: 60px;
         left: 50px;
-        top: calc(100vh - 80px);
+        top: calc(100vh - 200px);
         padding: 0 30px 0 70px;
         z-index: 1102;
         border-radius: 60px;
@@ -349,7 +349,7 @@ img { vertical-align: middle; }
     .about_btn .circle_btn_tab {
         width: 50px;
         height: 50px;
-        top: calc(100vh - 80px);
+        top: calc(100vh - 120px);
         left: 10px;
         border: 5px solid #FCFCFC;
     }
@@ -358,7 +358,7 @@ img { vertical-align: middle; }
         width: calc(100% - 20px);
         height: 60px;
         left: 10px;
-        top: calc(100vh - 80px);
+        top: calc(100vh - 120px);
         padding: 0;
         margin: 0;
         border-radius: 60px;

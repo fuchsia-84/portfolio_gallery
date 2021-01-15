@@ -57,45 +57,98 @@ $(function () {
             }
         }
     }
-    /*自己紹介用ボタンの処理*/
-    var window_width; // ウィンドウサイズ(横幅)
-    var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)
 
-    switch_about_menu(); // 自己紹介用メニューの表示/非表示を切り替える
-    $(window).on('resize', function(){
-        switch_about_menu(); // ウィンドウリサイズ時も同様
+    // 自己紹介用ボタンの処理
+    var window_width = 0;
+    var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)
+    var resize_timer = 0; // リサイズ感知回数を間引くためのタイマー
+    var loaded_is_PC = true;
+    var resized_is_PC = true;
+
+    switch_about_menu_load(); // ロード時、自己紹介用メニューの表示/非表示を切り替える
+
+    $(window).on('resize', function(){ // リサイズ時も
+        if (resize_timer > 0) {
+            clearTimeout(resize_timer);
+        }
+        resize_timer = setTimeout(function () {
+            switch_about_menu_resize(loaded_is_PC); // リサイズ中に実行する処理回数をタイマーで調整
+        }, 500);
     });
 
     /*
-    switch_about_menu - 自己紹介用メニューの表示/非表示を切り替える
+    switch_about_menu_load - ロード時の自己紹介用メニューイベント管理
     */
-    function switch_about_menu() {
+    function switch_about_menu_load() {
         window_width = $(window).width();
-
-        // 初期化
-        if ($('.about_menu').hasClass('open')) {
-            $('.about_menu').removeClass('open');
-        }
-        if ($('.circle_btn_tab').hasClass('open')) {
-            $('.circle_btn_tab').removeClass('open');
-        }
+        console.log('ロードしました。画面幅: '+ window_width);
 
         if (window_width > border_pc_tab) {
-
+            console.log('PCで閲覧しています。');
+            loaded_is_PC = true;
             // PC閲覧時は写真円枠ボタンにマウスオーバーで
-            $('.circle_btn').mouseover(function() {
+            $('.circle_btn').mouseenter(function() {
                 $('.about_menu').addClass('open');
+                console.log('PCメニューをクリック : 開');
             });
             $('#about_btn').mouseleave(function() {
                 $('.about_menu').removeClass('open');
+                console.log('PCメニューをクリック : 閉');
             });
         } else {
+            console.log('スマホで閲覧しています。');
+            loaded_is_PC = false;
             // スマホ閲覧時は+/-のボタンクリックで
             $('.circle_btn_tab').on('click', function(){
                 $('.circle_btn_tab').toggleClass('open');
                 $('.about_menu').toggleClass('open');
+                console.log('スマホメニューをクリック');
             });
         }
+    }
+    /*
+    switch_about_menu_resize - リサイズ時の自己紹介用メニュー処理
+    */
+   function switch_about_menu_resize(flag) {
+        window_width = $(window).width();
+        resized_is_PC = window_width > border_pc_tab;
+
+        console.log('リサイズされました。画面幅: '+ window_width);
+    
+        if (flag == true) { // ロード時PC閲覧
+            if (resized_is_PC == true) { // リサイズ時もPC閲覧だった
+                // 変化いらない
+                console.log('ロード:PC、リサイズ:PC。変化いらない');
+            } else if (resized_is_PC == false) { // リサイズ時スマホ閲覧になった
+                console.log('ロード:PC、リサイズ:スマホ。スマホ用に切替');
+                
+                // スマホ閲覧時は+/-のボタンクリックで開閉を切替
+                $('.circle_btn_tab').on('click', function() {
+                    $('.circle_btn_tab').toggleClass('open');
+                    $('.about_menu').toggleClass('open');
+                    console.log('スマホメニューをクリック');
+                });
+            } else {
+                console.log('エラー');
+            }
+        } else if (flag == false) { // ロード時スマホ閲覧だった
+            if (resized_is_PC == true) { // リサイズ時PC閲覧になった
+                console.log('ロード:スマホ、リサイズ:PC。PC用に切替');
+                $('.circle_btn').mouseenter(function() {
+                    $('.about_menu').addClass('open');
+                    console.log('PCメニューをクリック : 開');
+                });
+                $('#about_btn').mouseleave(function() {
+                    $('.about_menu').removeClass('open');
+                    console.log('PCメニューをクリック : 閉');
+                });
+            } else if (resized_is_PC == false) { // リサイズ時もスマホ閲覧だった
+                console.log('ロード:スマホ、リサイズ:スマホ。変化いらない');
+            } else {
+                console.log('エラー');
+            }
+        }
+        loaded_is_PC = resized_is_PC; // フラグ更新
     }
 
     /*自己紹介の詳細情報とメニューの表示/非表示を切り替える*/

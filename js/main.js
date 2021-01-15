@@ -156,16 +156,16 @@ $(function () {
         // PC、タブレット閲覧時はFuchsia の文字クリックで
         $('#view_about').on('click', function() {
             $('#about').show();
-            $('#about_btn').hide();
         });
         // スマホ時はアイコンクリックで
         $('#view_about_sp').on('click', function() {
             $('#about').show();
-            $('#about_btn').hide();
         });
         $('#about_toggle_btn').on('click', function() {
             $('#about').hide();
-            $('#about_btn').show();
+            // aboutを閉じたらメニューも非表示とする
+            $('.circle_btn_tab').removeClass('open');
+            $('.about_menu').removeClass('open');
         });
     });
 

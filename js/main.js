@@ -60,40 +60,40 @@ $(function () {
     /*自己紹介用ボタンの処理*/
     var window_width; // ウィンドウサイズ(横幅)
     var border_pc_tab = 1025; // PCとタブレットの境界(レスポンシブ対応用)
+
     switch_about_menu(); // 自己紹介用メニューの表示/非表示を切り替える
     $(window).on('resize', function(){
-        switch_about_menu(); // ウィンドウリサイズ時も同様にする
+        switch_about_menu(); // ウィンドウリサイズ時も同様
     });
+
     /*
     switch_about_menu - 自己紹介用メニューの表示/非表示を切り替える
     */
     function switch_about_menu() {
         window_width = $(window).width();
 
+        // 初期化
+        if ($('.about_menu').hasClass('open')) {
+            $('.about_menu').removeClass('open');
+        }
+        if ($('.circle_btn_tab').hasClass('open')) {
+            $('.circle_btn_tab').removeClass('open');
+        }
+
         if (window_width > border_pc_tab) {
 
             // PC閲覧時は写真円枠ボタンにマウスオーバーで
-            $('#about_btn').mouseover(function() {
+            $('.circle_btn').mouseover(function() {
                 $('.about_menu').addClass('open');
             });
-            $('#about_btn').mouseout(function() {
+            $('#about_btn').mouseleave(function() {
                 $('.about_menu').removeClass('open');
             });
-            $('#about_btn').on('click', function() {
-                $('.about_menu').toggleClass('open'); // クリックでも閉じられるように
-            });
-
         } else {
-
             // スマホ閲覧時は+/-のボタンクリックで
             $('.circle_btn_tab').on('click', function(){
-                if ($('.circle_btn_tab').hasClass('open')) {
-                    $('.circle_btn_tab').removeClass('open');
-                    $('.about_menu').removeClass('open');
-                } else {
-                    $('.circle_btn_tab').addClass('open');
-                    $('.about_menu').addClass('open');
-                }
+                $('.circle_btn_tab').toggleClass('open');
+                $('.about_menu').toggleClass('open');
             });
         }
     }

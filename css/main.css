@@ -277,6 +277,7 @@ img { vertical-align: middle; }
 @media only screen and (max-width: 1025px) {
     .about_btn .circle_btn {
         display: none;
+        z-index: 1100;
     }
     .about_btn .circle_btn_tab {
         display: block;

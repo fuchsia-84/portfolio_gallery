@@ -248,6 +248,8 @@ img { vertical-align: middle; }
     left: 225px;
     width: 20px;
     border: 1px solid #3E4C75;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
     transform: rotate(90deg);
     z-index: 1102;
 }
@@ -544,11 +546,15 @@ img { vertical-align: middle; }
 }
 
 .about .about_toggle_btn span:nth-child(1) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: calc(50% - 2px);
     left: -2px;
 }
 .about .about_toggle_btn span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
     transform: rotate(45deg);
     top: calc(50% - 2px);
     left: -2px;
@@ -882,11 +888,15 @@ img { vertical-align: middle; }
     z-index: 1101;
 }
 .gallery_item .toggle_btn span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
     transform:rotate(45deg);
     left: -1px;
     top: calc(50% - 1px);
 }
 .gallery_item .toggle_btn span:nth-child(2) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
     transform:rotate(-45deg);
     left: -1px;
     top: calc(50% - 1px);

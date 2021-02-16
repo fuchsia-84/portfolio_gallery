@@ -850,6 +850,7 @@ img { vertical-align: middle; }
     margin-right: 15px;
 }
 .gallery_item .content_text a {
+    position: relative;
     text-decoration: none;
     font-weight: 900;
     font-style: normal;
@@ -857,14 +858,28 @@ img { vertical-align: middle; }
     line-height: 14px;
     letter-spacing: 0.005em;
     margin-bottom: 4px;
+    color: #FCFCFC;
+    transition: .3s;
 }
 .gallery_item .content_text .link_article_design, .gallery_item .content_text .link_article_coding, .gallery_item .content_text .link_article_workbook {
     font-size: 12px;
     line-height: 12px;
 }
-.gallery_item .content_text a:visited {
-    color: #FCFCFC;
+.gallery_item .content_text a::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #FCFCFC;
+    transition: .3s;
+    transform: translateX(-50%);
 }
+.gallery_item .content_text a:hover::after {
+    width: 100%;
+}
+
 .gallery_item .content_text a i {
     font-size: 22px;
     line-height: 22px;

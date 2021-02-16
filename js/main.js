@@ -419,11 +419,8 @@ $(function () {
                 // 自己紹介用コンテンツを非表示にする
                 $('#about_btn').hide();
 
-                // PC閲覧時はスクロールをOFF
-                if (window.matchMedia('(min-width: 600px)').matches) {
-                    $('body').css('overflow', 'hidden');
                 // スマホ閲覧時はスクロールをON、バックの画像とヘッダーを非表示
-                } else if (window.matchMedia('(max-width: 599px)').matches) {
+                if (window.matchMedia('(max-width: 599px)').matches) {
                     $('body').css('overflow', 'visible');
                     $('.gallery_img').hide();
                     $('#gallery').css('height', '0');
@@ -461,7 +458,13 @@ $(function () {
             $('.toggle_btn').on('click', function() {
                 $(gallery_content_inner).hide();
                 $(gallery_content).hide();
-                $('.gallery_img').show(); // 画像を表示し直す
+
+                // バックの画像とヘッダーを表示
+                if (window.matchMedia('(max-width: 599px)').matches) {
+                    $('.gallery_img').show();
+                    $('#gallery').css('height', '100vh');
+                    $('#header').show();
+                }
 
                 $('#' + gallery_item_id).css('width', 'auto');
 
@@ -474,10 +477,6 @@ $(function () {
 
                 // 自己紹介用コンテンツを表示する
                 $('#about_btn').show();
-                // スクロールをONにする
-                $('body').css('overflow', 'scroll');
-                // スマホ時非表示になったヘッダーも表示
-                $('#header').show();
             });
 
             added_count += slice_data.length; // 追加済みアイテム数を更新

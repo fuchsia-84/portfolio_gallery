@@ -187,8 +187,6 @@ $(function () {
             gallery_item_off_left = 0, // クリックした画像アイテムサムネイルの元のleft
             gallery_item_off_top = 0, // クリックした画像アイテムサムネイルの元のtop
             content_height = 0, // クリックした画像アイテムの情報コンテナの高さ
-            image_height = 0, // クリックした画像アイテムの画像の高さ
-            window_height = $(window).outerHeight(), // ウィンドウの高さ
             header_height = 0, // ヘッダーの高さ
             main_padding_left = 0, // コンテンツ左に設定した余白の幅
             gallery_content_link_list = '', // クリックした画像アイテムのリンクリストクラス
@@ -422,28 +420,12 @@ $(function () {
                 // バックの画像とヘッダーを非表示
                 if (window.matchMedia('(max-width: 599px)').matches) {
                     content_height = $(gallery_content_inner).innerHeight(); // クリックしたアイテムのコンテナの高さ
-                    console.log(content_height);
                     $('body').css('overflow', 'hidden');
                     $('body').css('height', content_height);
                     $('.gallery_img').hide();
                     $('#gallery').css('height', '0');
                     $('#header').hide();
                 }
-                /*
-                ToDo : このままだとスマホではスクロールOFFにならない。
-                レスポンシブ対応時に注意
-                */
-
-                // 全画面表示のための高さ調整
-                /*
-                content_height = $(gallery_content).outerHeight(); // クリックしたアイテムのコンテナの高さ
-                image_height = $(gallery_content + ' img').outerHeight(); // クリックした画像アイテムの高さ
-
-                // 画像の高さがウィンドウサイズより大きいとき、コンテナのheightを画像の高さにする
-                if(image_height > window_height) {
-                    $(gallery_content).css('height', image_height);
-                }
-                */
 
                 // リンクのリスト中、中身が"#"のものは非表示にする
                 link_list = $(gallery_content_link_list).find('a'); // リンクのリストを取得

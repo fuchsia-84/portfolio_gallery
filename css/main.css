@@ -1108,9 +1108,10 @@ img { vertical-align: middle; }
     font-size: 18px;
     padding-top: 2px;
     margin-right: 15px;
+    -moz-user-select: none;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .filter_form label :last-child {
     margin-right: 0;

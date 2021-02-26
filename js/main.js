@@ -412,16 +412,19 @@ $(function () {
                 scrollTo(0,0);
 
                 // モーダルウィンドウを表示
-                $(gallery_content).show();
-                $(gallery_content_inner).show();
-                $(gallery_content + ' a').show();
+                $(gallery_content).addClass('show');
+                $(gallery_content_inner).addClass('show');
+                $(gallery_content + ' a').addClass('show');
 
                 // 自己紹介用コンテンツを非表示にする
                 $('#about_btn').hide();
 
-                // スマホ閲覧時はスクロールをON、バックの画像とヘッダーを非表示
+                // バックの画像とヘッダーを非表示
                 if (window.matchMedia('(max-width: 599px)').matches) {
-                    $('body').css('overflow', 'visible');
+                    content_height = $(gallery_content_inner).innerHeight(); // クリックしたアイテムのコンテナの高さ
+                    console.log(content_height);
+                    $('body').css('overflow', 'hidden');
+                    $('body').css('height', content_height);
                     $('.gallery_img').hide();
                     $('#gallery').css('height', '0');
                     $('#header').hide();
@@ -456,11 +459,13 @@ $(function () {
             });
             /* 閉じるボタンを押したらモーダルウィンドウを非表示、画像は表示*/
             $('.toggle_btn').on('click', function() {
-                $(gallery_content_inner).hide();
-                $(gallery_content).hide();
-
+               $(gallery_content).removeClass('show');
+               $(gallery_content_inner).removeClass('show');
+               $(gallery_content + ' a').removeClass('show');
+               
                 // バックの画像とヘッダーを表示
                 if (window.matchMedia('(max-width: 599px)').matches) {
+                    $('body').css('overflow', 'visible');
                     $('.gallery_img').show();
                     $('#gallery').css('height', '100vh');
                     $('#header').show();

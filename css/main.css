@@ -802,9 +802,6 @@ img { vertical-align: middle; }
 .gallery_item.is_loading {
     opacity: 0;
 }
-.gallery_item a {
-    display: none;
-}
 .gallery_item .gallery_img {
     display: block;
 }
@@ -814,7 +811,7 @@ img { vertical-align: middle; }
 
 /* モーダルウィンドウ */
 .gallery_item .content {
-    display: none;
+    visibility: hidden;
     position: absolute;
     width: calc(100% + 300px);
     z-index: 998;
@@ -822,28 +819,69 @@ img { vertical-align: middle; }
     left: -150px;
     height: 100vh;
 }
+.gallery_item .content.show {
+   visibility: visible;
+}
 .gallery_item .content_inner {
-    display: none;
+    visibility: hidden;
+    opacity: 0.0;
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 0;
     margin: 0 auto;
     z-index: 999;
     background-color: rgb(0,0,0,0.6);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
 }
-.gallery_item .content_left {
-    display: block;
-    float: left;
+.gallery_item .content_inner.show {
+    visibility: visible;
+    opacity: 1.0;
+    height: 100vh;
+}
+.gallery_item .content a.show {
+    visibility: hidden;
+}
+.gallery_item .content a.show {
+    visibility: visible;
+}
+.gallery_item .content .content_left {
+    visibility: hidden;
+    position: absolute;
+    left: -1000px;
     width: 40%;
     height: 100vh;
     overflow-y: scroll;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+}
+.gallery_item .content.show .content_left {
+    visibility: visible;
+    left: 0;
 }
 .gallery_item .content_left img {
     width: 100%;
 }
-.gallery_item .content_right {
-    display: block;
-    float: right;
+.gallery_item .content .content_right {
+    visibility: hidden;
+    position: absolute;
+    right: -1000px;
+    width: calc(60% - 170px);
+    height: 100vh;
+    padding-right: 170px;
+    overflow-y: scroll;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+}
+.gallery_item .content.show .content_right {
+    visibility: visible;
+    right: 0;
     width: calc(60% - 170px);
     height: 100vh;
     padding-right: 170px;
@@ -947,38 +985,61 @@ img { vertical-align: middle; }
     line-height: 22px;
     margin-right: 5px;
 }
-.gallery_item .toggle_btn {
-    display: block;
+.gallery_item .content .toggle_btn {
+    visibility: hidden;
+    opacity: 0.0;
     width: 110px;
     height: 110px;
     position: absolute;
     cursor: pointer;
     z-index: 1100;
     top: 50px;
+    right: -100px;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+}
+.gallery_item .content.show .toggle_btn {
+    visibility: visible;
+    opacity: 1.0;
     right: 50px;
 }
-.gallery_item .toggle_btn span {
-    display: block;
+.gallery_item .content .toggle_btn span {
+    visibility: hidden;
+    opacity: 0.0;
     width: 100%;
     height: 2px;
     background: #FCFCFC;
     border-radius: 10px;
     position: absolute;
     z-index: 1101;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
 }
-.gallery_item .toggle_btn span:nth-child(1) {
+.gallery_item .content.show .toggle_btn span {
+    visibility: visible;
+    opacity: 1.0;
+}
+.gallery_item .content .toggle_btn span:nth-child(1) {
+    left: 0;
+    top: calc(50% - 1px);
+}
+.gallery_item .content .toggle_btn span:nth-child(2) {
+    left: 0;
+    top: calc(50% - 1px);
+}
+.gallery_item .content.show .toggle_btn span:nth-child(1) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     transform:rotate(45deg);
-    left: 0;
-    top: calc(50% - 1px);
 }
-.gallery_item .toggle_btn span:nth-child(2) {
+.gallery_item .content.show .toggle_btn span:nth-child(2) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     transform:rotate(-45deg);
-    left: 0;
-    top: calc(50% - 1px);
 }
 @media only screen and (max-width: 1025px) {
     .gallery_item .content {
@@ -1010,32 +1071,67 @@ img { vertical-align: middle; }
 @media only screen and (max-width: 600px) {
     .gallery_item .content {
         width: calc(100% + 80px);
+        height: 0;
+        top: -210px;
+        left: -40px;
+    }
+    .gallery_item .content.show {
+        width: calc(100% + 80px);
         height: auto;
         top: -210px;
         left: -40px;
     }
-    .gallery_item .content_inner {
+    .gallery_item .content .content_inner {
         position: relative;
-        height: auto;
-    }
-    .gallery_item .content_left {
-        display: block;
-        position: static;
-        overflow-y: visible;
-        float: none;
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 5%;
+        height: 0;
         top: 0;
         left: 0;
+    }
+    .gallery_item .content.show .content_inner {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 5%;
+        height: 0;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+    .gallery_item .content .content_left {
+        position: static;
+        overflow-y: visible;
         width: 100%;
         height: auto;
         margin: 100px auto 50px;
         padding: 0;
         z-index: 1000;
     }
-    .gallery_item .content_right {
-        display: block;
+    .gallery_item .content.show .content_left {
         position: static;
         overflow-y: visible;
-        float: none;
+        width: 100%;
+        height: auto;
+        margin: 100px auto 50px;
+        padding: 0;
+        z-index: 1000;
+    }
+    .gallery_item .content .content_right {
+        position: static;
+        overflow-y: visible;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        margin: 0 auto 100px;
+        padding: 0;
+        z-index: 1000;
+    }
+    .gallery_item .content.show .content_right {
+        position: static;
+        overflow-y: visible;
         width: 100%;
         height: auto;
         top: 0;
@@ -1085,11 +1181,19 @@ img { vertical-align: middle; }
         line-height: 18px;
         margin-right: 5px;
     }
-    .gallery_item .toggle_btn {
+    .gallery_item .content .toggle_btn {
+        width: 50px;
+        height: 50px;
+        top: -200px;
+        right: 30px;
+        background-color: transparent;
+    }
+    .gallery_item .content.show .toggle_btn {
         width: 50px;
         height: 50px;
         top: 25px;
         right: 30px;
+        background-color: transparent;
     }
 }
 

@@ -209,7 +209,7 @@ img { vertical-align: middle; }
     z-index: 1103;
     border: 10px solid #FCFCFC;
     border-radius: 50%;
-    background-color: #3EB4B8;
+    /*background-color: #3EB4B8;*/
 }
 .about_btn .circle_btn_tab {
     display: none;

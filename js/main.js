@@ -36,7 +36,7 @@ $(function () {
             current += (target - current) * 0.1; // currentとtarget間の距離をもとにイージング
 
             // 表示バーの幅とテキストにcurrentの値を反映
-            $progress_bar.css({width: current + '%'});
+            $progress_bar.css({width: current*0.8 + '%'});
             $progress_text.text(Math.floor(current) + '%');
 
             // currentが100になったら終了
